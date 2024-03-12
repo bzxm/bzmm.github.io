@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 其他样式属性重置 */
+}
+
+/* 修改滚动条的宽度 */
+::-webkit-scrollbar {
+    width: 6px; /* 修改滚动条宽度（适用于Chrome和Safari） */
+}
+::-webkit-scrollbar-thumb {
+    background-color: #808080; /* 修改滚动条拖动块的颜色 */
+    border-radius: 6px; /* 修改滚动条拖动块的圆角 */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #f0f0f000; /* 修改滚动条轨道的颜色 */
+  }
+
+.detailContainer{
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #f9f9f9;
+}
+.block{
+    height: 60px;
+}
+
+.articlePage{
+    width: 98%;
+    margin: auto;
+    height: auto;
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 10px;
+}
+
+#articleTitle{
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    word-break: break-all;
+}
+.articleMsg{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 30px;
+    background-color: #becde029;
+    border-radius: 4px;
+}
+.articleTime, .articleClassify{
+    margin-right: 10px;
+    display: flex;
+    height: 100%;
+}
+.articleTimeIcon{
+    width: 30px;
+    height: 30px;
+    background: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/time.png?inline=false');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60% 60%;
+}
+.articleTimeText{
+    line-height: 30px;
+    font-size: 12px;
+    color: #7b8691;
+}
+.articleClassifyIcon{
+    width: 30px;
+    height: 30px;
+    background: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/star.png?inline=false');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60% 60%;
+}
+.articleClassifyText{
+    line-height: 30px;
+    font-size: 12px;
+    color: #7b8691;
+}
+
+.articlePTitle{
+    font-size: large;
+    font-weight: 600;
+    color: #fa5e8b;
+    letter-spacing: 2px;
+    padding-left: 5px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.articlePTitle::before{
+    content: "●";
+    margin-right: 10px;
+}
+.articleP{
+    margin: 16px auto;
+    padding-left: 20px;
+    line-height: 30px;
+}
+
+.articleImg{
+    display: block;
+    margin: 10px auto;
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    transition: all 0.3s;
+}
+.articleImg:hover{
+    box-shadow: #c8365f 0 0 10px;
+    transform: scale(0.99);
+}
+
+.downLoadArea{
+    width: 90%;
+    margin: 20px auto;
+    border: #fc4c7e dashed 2px;
+    border-radius: 20px;
+}
+.downLoadArea:hover{
+    background-color: #ffd5e1;
+}
+.downLoadArea:hover .downLoadTitle{
+    background-color: #ffd5e1;
+}
+.downLoadTitle{
+    display: inline-block;
+    padding: 0 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border-radius: 20px;
+    width: auto;
+    height: auto;
+    position: relative;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    color: #e9386a;
+    background-color: #fff;
+}
+.downLoadText{
+    padding: 0 30px;
+    font-size: 12px;
+    color: #e9386a;
+}
+.downLoadBtn{
+    display: inline-block;
+    padding: 8px 30px;
+    background-color: #fa5e8b;
+    color: #fff;
+    border-radius: 30px;
+    margin: 20px 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+}
+.downLoadBtn:hover{
+    background-color: #c8365f;
+    box-shadow: #981a3e 0 0 10px;
+}
+
+.downLoadBody2{
+    width: 90%;
+    margin: auto;
+    display: flex;
+}
+.downLoad2Left{
+    flex: 1;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.downLoad2Text{
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    line-height: 30px;
+    letter-spacing: 4px;
+    color: #e9386a;
+}
+.downLoad2Key{
+    font-weight: 600;
+    letter-spacing: 4px;
+    font-size: 14px;
+    line-height: 30px;
+    color: #f90047;
+}
+.downLoad2Right{
+    width: 50%;
+    padding: 30px;
+    max-width: 300px;
+    height: auto;
+}
+.downLoad2Img{
+    min-width: 50px;
+    width: 100%;
+    height: auto;
+}
+.gotoDown{
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    font-size: 12px;
+    color: #fa5e8b;
+    border:#c8365f solid 1px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: all 0.3s;
+}
+.gotoDown:hover{
+    background-color: #fa5e8b;
+    border:#fa5e8b solid 1px;
+    color: #fff;
+}
+
+/* 当视口宽度小于等于568px时应用以下样式 */
+@media (max-width: 568px) {
+    .downLoadBody2{
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .downLoad2Left{
+        flex: 1;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .downLoad2Img{
+        width: 100%;
+        min-width: 100px;
+        height: auto;
+    }
+    .downLoad2Right{
+        width: 50%;
+        margin: auto;
+        padding: 10px;
+        max-width: 300px;
+        min-width: 100px;
+        height: auto;
+    }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宝藏小蛮资源库</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/loader.css">
+    
+    <link rel="stylesheet" href="./component/navRow/navRow.css">
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script>
+
+</head>
+<body>
+    <div class="navRow">
+        <!-- 菜单条 -->
+        <div class="menuBar" id="menuBar"></div>
+        <!-- 页面标签条 -->
+        <div id="homeICO" class="myICOBar">
+            <img src="https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/myICOBar.png?inline=false" alt="" class="myICO">
+        </div>
+        <!-- 添加一个透明遮罩 -->
+        <div id="menuMask"></div>
+        <div class="menuSelect" id="menuSelect">
+            <div class="menuOption" id="homeBtn">首页</div>
+            <div class="menuOption" id="niceGame">精品游戏</div>
+            <!-- <div class="menuOption">热门游戏</div>
+            <div class="menuOption">动漫漫画</div>
+            <div class="menuOption">小说图文</div> -->
+        </div>
+    </div>
+
+    <!-- 加载前展示 -->
+    <div id="onload">
+        <div id="load">
+            <div class="loader"></div>
+            <div class="shadow"></div>
+        </div>
+        <div id="load_text">加载中</div>
+    </div>
+
+    <div id="container" class="container">
+        <div class="block"></div>
+        <div class="top">
+            <div class="head">
+                <img class="head_img" src="https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/ico.png?inline=false" alt="">
+            </div>
+            <div class="search_div">
+                <input id="searchText" type="text" placeholder="搜索你的钟爱">
+                <div id="search_btn">
+                    <img id="search_icon" src="https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/search.png?inline=false" alt="">
+                </div>
+            </div>
+            <!-- 搜索提示词 -->
+            <div class="searchTagList">
+                <div class="tagTitle">热门搜索 :</div>
+                <div class="searchTag">亚洲之子</div>
+                <div class="searchTag">VAM</div>
+                <div class="searchTag">纳迪亚</div>
+            </div>
+        </div>
+        <div class="searchBar">
+            <div class="bar" id="showBar">最新更新</div>
+        </div>
+        
+        <!-- 这里放所有card -->
+        <div class="cardList" id="cardList"></div>
+        <!-- 分页条 -->
+        <div class="pageBar" id="pageBar">
+            <div class="pageItem" id="upPage">上一页</div>
+            <div class="pageItem pageItemActive">1</div>
+            <div class="pageItem">2</div>
+            <div class="pageItem">3</div>
+            <div class="pageItem">4</div>
+            <div class="pageItem">5</div>
+            <div class="pageItem">...</div>
+            <div class="pageItem">22</div>
+            <div class="pageItem" id="downPage">下一页</div>
+            <input id="pageInput" placeholder="页码">
+            <div id="toPageBtn">跳转</div>
+        </div>
+        <div class="tailer">
+            <div class="tailerRow">
+                本站总访问量<span id="busuanzi_value_site_uv"></span>次
+            </div>
+            <div class="tailerRow">
+                防失联请关注微信公众号：<span style="color: rgb(253, 202, 120);">宝藏小蛮</span>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script src="./component/navRow/navRow.js"></script>
+<script src="./js/index.js"></script>
+</html>
