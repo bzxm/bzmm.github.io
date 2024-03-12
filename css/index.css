@@ -65,7 +65,7 @@ body{
     width: 70%;
     height: 50px;
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     display: flex;
     overflow: hidden;
     border-radius: 16px;
@@ -282,10 +282,10 @@ body{
         height: auto;
     }
     .search_div{
-        width: 80%;
+        width: 86%;
         height: 45px;
         margin: auto;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         display: flex;
         overflow: hidden;
         border-radius: 12px;
@@ -310,7 +310,7 @@ body{
         height: 30px;
     }
     .searchTagList{
-        width: 80%;
+        width: 86%;
         height: 40px;
         margin: auto;
     }
@@ -376,6 +376,18 @@ body{
     }
 
 
+}
+
+
+@media (max-width: 520px) {
+    .head_img{
+        width: 300px;
+        height: auto;
+        pointer-events: none;
+    }
+    .top{
+        padding-top: 70px;
+    }
 }
 
 @media (max-width: 320px) {

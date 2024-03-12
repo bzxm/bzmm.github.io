@@ -256,4 +256,23 @@
         min-width: 100px;
         height: auto;
     }
+
+    .gotoDown{
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        font-size: 12px;
+        color: #fa5e8b;
+        border:#c8365f solid 1px;
+        padding: 3px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        transform: translateY(-50%);
+        transition: all 0.3s;
+    }
+    .gotoDown:hover{
+        background-color: #fa5e8b;
+        border:#fa5e8b solid 1px;
+        color: #fff;
+    }
 }

@@ -371,7 +371,7 @@ const searchCardAndShow = (searText)=>{
     showBar.innerHTML = '搜索 '+searText
     let current = []
     allCards.forEach(item=>{
-        if(item.detail.includes(searText)){
+        if(item.detail.toLowerCase().includes(searText.toLowerCase())){
             current.push(item)
         }
     })
