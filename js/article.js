@@ -52,8 +52,34 @@ window.onload = function() {
             aritcleImgObj.className = 'articleImg'
             aritcleImgObj.alt = "该图片被和谐了..."
             if(i == 0){
+                // 创建 img_load
+                const img_load = document.createElement('div')
+                img_load.className = 'img_load'
+                img_load.id = 'img_load_'+i
+                articleTextArea.parentNode.insertBefore(img_load, articleTextArea);
+
+                
+                aritcleImgObj.addEventListener('load', function() {
+                        aritcleImgObj.style.display = 'block'
+                        // 隐藏 img_load
+                        document.getElementById('img_load_'+i).style.display='none'
+                    });
                 articleTextArea.parentNode.insertBefore(aritcleImgObj, articleTextArea)
-            }else articleImgArea.appendChild(aritcleImgObj)
+            }else {
+                // 创建 img_load
+                const img_load = document.createElement('div')
+                img_load.className = 'img_load'
+                img_load.id = 'img_load_'+i
+                articleImgArea.appendChild(img_load);
+
+                
+                aritcleImgObj.addEventListener('load', function() {
+                    aritcleImgObj.style.display = 'block'
+                        // 隐藏 img_load
+                        document.getElementById('img_load_'+i).style.display='none'
+                    });
+                articleImgArea.appendChild(aritcleImgObj)
+            }
 
         }
     } else {

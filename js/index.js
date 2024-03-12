@@ -87,7 +87,7 @@ request.onload = function () {
 
 const showThis = (cards) => {
     cardList.innerHTML = ''
-    cards.forEach(card => {
+    cards.forEach((card,index) => {
         console.log("card",card);
 
         // 创建 card
@@ -97,18 +97,31 @@ const showThis = (cards) => {
         card1.addEventListener('click',() => {
             cardClick(card)
         })
-        // 创建 cover
+    // 创建 cover
         var cover = document.createElement('div');
         cover.className = 'cover'
-        // 创建 cover_img
+    // 创建 cover_img
         var cover_img = document.createElement('img')
         if(card.imgArr != undefined)
         cover_img.src = card.imgArr[0]
         cover_img.alt = "该图片被和谐了..."
-        cover_img.className = 'cover'
-    // 添加 cover_img 到 cover
+        cover_img.className = 'cover_img'
+        // 添加加载监听
+        cover_img.addEventListener('load',() => {
+            document.getElementById('cover_load_'+index).style.display = 'none'
+        })
+        cover_img.addEventListener('error',() => {
+            document.getElementById('cover_load_'+index).style.display = 'none'
+        })
+        // 添加 cover_img 到 cover
         cover.appendChild(cover_img)
-        // 创建 msg
+    // 创建 加载图标
+        var cover_load = document.createElement('div');
+        cover_load.className = 'cover_load'
+        cover_load.id = 'cover_load_'+index
+        // 添加到 cover
+        cover.appendChild(cover_load)
+    // 创建 msg
         var msg = document.createElement('div');
         msg.className = 'msg'
         // 创建 flag

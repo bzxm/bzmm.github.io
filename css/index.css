@@ -152,6 +152,7 @@ body{
     width: 30vw;
     height: 20vw;
     overflow: hidden;
+    position: relative;
 }
 .cover_img{
     pointer-events: none;
@@ -159,6 +160,7 @@ body{
     height: 100%;
     object-fit:cover;
 }
+
 .msg{
     width: 100%;
 }
@@ -336,7 +338,7 @@ body{
         margin-bottom: 20px;
         margin-left: 10px;
         border-radius: 6px;
-        background-color: #fffbf6;
+        background-color: #fff;
     }
     .card:hover{
         box-shadow: #d6410f 0 0 8px;
@@ -344,8 +346,19 @@ body{
     .cover{
         width: 45vw;
         height: 30vw;
-        background-color: rgb(255, 149, 165);
+        background-color: #fffbf6;
 
+    }
+    .cover_load{
+        position: absolute;
+        top: 50%;
+        width: 20vw;
+        height: 20vw;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background:url('../imgs/load.gif') center;
+        background-size: contain;
+        z-index: 2;
     }
 
     .flag{
