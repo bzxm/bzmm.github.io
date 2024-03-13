@@ -55,7 +55,7 @@
     background-color: #becde029;
     border-radius: 4px;
 }
-.articleTime, .articleClassify{
+.articleTime, .articleClassify,.articleRead{
     margin-right: 10px;
     display: flex;
     height: 100%;
@@ -69,6 +69,19 @@
     background-size: 60% 60%;
 }
 .articleTimeText{
+    line-height: 30px;
+    font-size: 12px;
+    color: #7b8691;
+}
+.articleReadIcon{
+    width: 30px;
+    height: 30px;
+    background: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/%E8%A7%82%E7%9C%8B.png?inline=false');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60% 60%;
+}
+.articleReadText{
     line-height: 30px;
     font-size: 12px;
     color: #7b8691;
@@ -122,7 +135,7 @@
 .img_load{
     width: 100%;
     height: 50px;
-    background: url('../imgs/load.gif') center no-repeat;
+    background: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/load.gif?inline=false') center no-repeat;
     background-size: contain;
 }
 
@@ -265,21 +278,34 @@
     }
 
     .gotoDown{
-        position: absolute;
-        right: 20px;
-        top: 50%;
+        position: static; /* 或者其他适合的值，如 relative */
+        top: auto;
+        left: auto;
         font-size: 12px;
         color: #fa5e8b;
         border:#c8365f solid 1px;
-        padding: 3px 10px;
+        padding: 2px 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border-radius: 4px;
         cursor: pointer;
-        transform: translateY(-50%);
+        transform: translateY(0);
         transition: all 0.3s;
     }
     .gotoDown:hover{
         background-color: #fa5e8b;
         border:#fa5e8b solid 1px;
         color: #fff;
+    }
+
+    .articleMsg{
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: auto;
+        background-color: #becde029;
+        border-radius: 4px;
     }
 }

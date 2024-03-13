@@ -136,7 +136,7 @@ body{
     box-sizing: border-box;
 }
 .card{
-    width: 30vw;
+    width: 24vw;
     margin-bottom: 20px;
     margin-left: 10px;
     border-radius: 6px;
@@ -149,8 +149,8 @@ body{
     box-shadow: #d60f16cc 0 0 8px;
 }
 .cover{
-    width: 30vw;
-    height: 20vw;
+    width: 24vw;
+    height: 16vw;
     overflow: hidden;
     position: relative;
 }
@@ -159,6 +159,17 @@ body{
     width: 100%;
     height: 100%;
     object-fit:cover;
+}
+.cover_load{
+    position: absolute;
+    top: 50%;
+    width: 20vw;
+    height: 20vw;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background:url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/load.gif?inline=false') center;
+    background-size: contain;
+    z-index: 2;
 }
 
 .msg{
@@ -271,7 +282,28 @@ body{
     margin: auto 10px;
     color: #d6410f;
 }
-
+/* 当视口宽度小于等于768px时应用以下样式 */
+@media (max-width: 1200px) {
+    .card{
+        width: 30vw;
+        margin-bottom: 20px;
+        margin-left: 10px;
+        border-radius: 6px;
+        background-color: #fffbf6;
+        box-shadow: #aaa 0 0 4px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    .card:hover{
+        box-shadow: #d60f16cc 0 0 8px;
+    }
+    .cover{
+        width: 30vw;
+        height: 20vw;
+        overflow: hidden;
+        position: relative;
+    }
+}
 
 /* 当视口宽度小于等于768px时应用以下样式 */
 @media (max-width: 768px) {
@@ -356,7 +388,7 @@ body{
         height: 20vw;
         left: 50%;
         transform: translate(-50%,-50%);
-        background:url('../imgs/load.gif') center;
+        background:url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/load.gif?inline=false') center;
         background-size: contain;
         z-index: 2;
     }

@@ -102,8 +102,7 @@ const showThis = (cards) => {
         cover.className = 'cover'
     // 创建 cover_img
         var cover_img = document.createElement('img')
-        if(card.imgArr != undefined)
-        cover_img.src = card.imgArr[0]
+        cover_img.src = card.cover
         cover_img.alt = "该图片被和谐了..."
         cover_img.className = 'cover_img'
         // 添加加载监听
@@ -420,10 +419,7 @@ searchText.addEventListener('keypress', function(event) {
 
 // 点击card 事件 进入 detail 界面
 const cardClick = (card) => {
-    const cardStr = JSON.stringify(card)
-    // 存入会话
-    sessionStorage.setItem('card', cardStr)
-    let ref = '../html/article.html'
+    let ref = '../articles/'+card.id+'.html'
     window.location.href = ref
 }
 
