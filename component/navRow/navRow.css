@@ -4,10 +4,10 @@
     background-color: #fff;
     box-shadow: #a7a7a786 0 2px 6px;
     position: fixed;
-    display: flex;
     z-index: 99;
 }
 .menuBar{
+    position: absolute;
     width: 60px;
     height: 60px;
     background: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/%E8%8F%9C%E5%8D%95.png?inline=false');
@@ -30,6 +30,95 @@
     width: auto;
     pointer-events: none;
 }
+.nav_search{
+    position: absolute;
+    right: 6px;
+    width: 60px;
+    height: 60px;
+    background: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/search_pink.png?inline=false');
+    background-size: 40% 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+#searchMask{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #3c3c3c4b;
+}
+#searchToast{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 70%;
+    max-width: 700px;
+    height: 200px;
+    background-color: #fff;
+    box-shadow: #3c3c3c99 0 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.toastTitle{
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    color: #fc85a7;
+    letter-spacing: 8px;
+}
+.toastInput{
+    width: 80%;
+    height: 40px;
+    outline: none;
+    color: #ff0070;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    padding-left: 20px;
+    font-size: 17px;
+    margin-bottom: 20px;
+    border: #3c3c3c solid 1px;
+}
+.toastInput:hover{
+    border: #ff0070 solid 1px;
+}
+.toastBtn{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/search_p.png?inline=false') center;
+    background-repeat: no-repeat;
+    background-size: 80% 80%;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.toastBtn:hover{
+    opacity: 0.7;
+}
+.toastClose{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 0;
+    top: 0;
+    background: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/close_p.png?inline=false') center;
+    background-repeat: no-repeat;
+    background-size: 40% 40%;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.toastClose:hover{
+    opacity: 0.7;
+}
+
+
 #menuMask{
     display: none;
     width: 100vw;

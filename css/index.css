@@ -183,11 +183,20 @@ body{
     color: #d6410f;
     display: flex;
     align-items: center;
+    position: relative;
 }
 .dopt{
+    font-size: normal;
     margin-right: 6px;
     padding-bottom: 3px;
     color: rgb(5, 206, 129);
+}
+.cardConfig{
+    position: absolute;
+    right: 10px;
+    padding: 2px 4px;
+    border-radius: 4px;
+    border: solid 2px #d6410f;
 }
 .cTitle{
     width: 100%;
@@ -403,6 +412,7 @@ body{
         align-items: center;
     }
     .dopt{
+        font-size: 10px;
         margin-right: 6px;
         padding-bottom: 3px;
         color: rgb(5, 206, 129);

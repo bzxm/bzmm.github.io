@@ -23,16 +23,30 @@
         <div id="homeICO" class="myICOBar">
             <img src="https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/myICOBar.png?inline=false" alt="" class="myICO">
         </div>
+        <!-- 搜索按钮 -->
+        <div class="nav_search" id="nav_search"></div>
+        <!-- 搜索弹出框 -->
+        <div id="searchMask">
+            <div id="searchToast">
+                <div class="toastTitle">搜索</div>
+                <input type="text" class="toastInput" id="toastInput" placeholder="搜索你的钟爱">
+                <div class="toastBtn" id="toastBtn"></div>
+                <!-- 关闭按钮 -->
+                <div class="toastClose" id="toastClose"></div>
+            </div>
+        </div>
         <!-- 添加一个透明遮罩 -->
         <div id="menuMask"></div>
         <div class="menuSelect" id="menuSelect">
             <div class="menuOption" id="homeBtn">首页</div>
             <div class="menuOption" id="niceGame">精品游戏</div>
-            <!-- <div class="menuOption">热门游戏</div>
+            <div class="menuOption" id="pcGame">热门游戏</div>
+            <!-- 
             <div class="menuOption">动漫漫画</div>
             <div class="menuOption">小说图文</div> -->
         </div>
     </div>
+
 
     <!-- 加载前展示 -->
     <div id="onload">
@@ -60,6 +74,7 @@
                 <div class="tagTitle">热门搜索 :</div>
                 <div class="searchTag">亚洲之子</div>
                 <div class="searchTag">3d</div>
+                <div class="searchTag">GTA</div>
             </div>
         </div>
         <div class="searchBar">
