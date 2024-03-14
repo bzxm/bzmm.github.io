@@ -177,27 +177,69 @@ body{
 }
 .flag{
     padding-left: 10px;
-    width: 100%;
-    height: 30px;
-    font-size: 12px;
+    width: auto;
+    height: auto;
+    font-size: 10px;
     color: #d6410f;
-    display: flex;
-    align-items: center;
     position: relative;
+    overflow: hidden;
+    margin: 10px 0;
 }
-.dopt{
-    font-size: normal;
-    margin-right: 6px;
-    padding-bottom: 3px;
-    color: rgb(5, 206, 129);
-}
+
+
+/* card 配置 */
 .cardConfig{
-    position: absolute;
-    right: 10px;
-    padding: 2px 4px;
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-right: 5px;
+    margin-top: 5px;
+    /* background-color: #ff3e3e; 
+    color: rgb(255, 255, 255); */
+    color: #ff3e3e;
+    border: #ff3e3e solid 2px;
+    padding: 0px 4px;
     border-radius: 4px;
-    border: solid 2px #d6410f;
 }
+/* 热门 */
+.cardConfigFire{
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-right: 5px;
+    margin-top: 5px;
+    background-color: #ebc283;
+    background: radial-gradient(circle at center, #f5e2c5, #ebc283);
+    color: #7c4908;
+    padding: 1px 4px;
+    border-radius: 4px;
+}
+/* 其他子分类 */
+.cardConfigGreen{
+    display: inline-block;
+    letter-spacing: 1px;
+    margin-right: 5px;
+    margin-top: 5px;
+    font-size: 10px;
+    background-color: #4cb87b;
+    color: #ffffff;
+    padding: 1px 4px;
+    border-radius: 4px;
+}
+.cardConfigPink{
+    display: inline-block;
+    font-size: 10px;
+    margin-right: 5px;
+    margin-top: 5px;
+    letter-spacing: 1px;
+    background-color: #fa6787;
+    color: #ffffff;
+    padding: 1px 4px;
+    border-radius: 4px;
+}
+
+
+
 .cTitle{
     width: 100%;
     font-size: 17px;
@@ -404,19 +446,10 @@ body{
 
     .flag{
         padding-left: 10px;
-        width: 100%;
-        height: 30px;
         font-size: 12px;
         color: #d6410f;
-        display: flex;
-        align-items: center;
     }
-    .dopt{
-        font-size: 10px;
-        margin-right: 6px;
-        padding-bottom: 3px;
-        color: rgb(5, 206, 129);
-    }
+
     .cTitle{
         width: 100%;
         font-size: 15px;
