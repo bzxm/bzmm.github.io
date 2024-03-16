@@ -51,56 +51,57 @@ let currentPageNum = 1
 // 总共多少页
 let totalPages
 
-var url = "../data/webCards.json"
-// 申明一个XMLHttpRequest
-var request = new XMLHttpRequest();
-// 设置请求方法与路径
-request.open("get", url);
-// 不发送数据到服务器
-request.send(null);
-//XHR对象获取到返回信息后执行
-request.onload = function () {
-    // 解析获取到的数据
-    var cards1 = JSON.parse(request.responseText);
-    var cards = []
-    
-    console.log('data:',cards)
+onload.style.display = 'block'
 
-    // 清除 null
-    cards1.forEach(item=>{
-        if(item!=null){
-            cards.push(item)
-        }
-    })
+window.onload = () => {
 
-    allCards = cards
-
-    // 判断该展示的内容
     // 解析 URL 中的参数
     var urlParams = new URLSearchParams(window.location.search);
     var classifyValue = urlParams.get('classify');
     if(classifyValue!=null){
-        getCurrentClassifyCards(classifyValue)
-        currentPageNum = 1
-        showThis(getCurrentShowCards(currentPageNum))
-        // 滚动到页面顶部
-        container.scrollTo(0, 0);
-        onload.style.display = 'none'
 
-        console.log('上个页面传递:'+classifyValue);
+        var url = "../data/"+classifyValue+".json"
+        // 申明一个XMLHttpRequest
+        var request = new XMLHttpRequest();
+        // 设置请求方法与路径
+        request.open("get", url);
+        // 不发送数据到服务器
+        request.send(null);
+        //XHR对象获取到返回信息后执行
+        request.onload = function () {
+            // 解析获取到的数据
+            var cards1 = JSON.parse(request.responseText);
+            var cards = []
+            
+            console.log('data:',cards)
+    
+            // 清除 null
+            cards1.forEach(item=>{
+                if(item!=null){
+                    cards.push(item)
+                }
+            })
+    
+            allCards = cards
+    
+            getCurrentClassifyCards(classifyValue)
+            currentPageNum = 1
+            showThis(getCurrentShowCards(currentPageNum))
+            // 滚动到页面顶部
+            container.scrollTo(0, 0);
+            onload.style.display = 'none'
+
+            console.log('上个页面传递:'+classifyValue);
+        }
     }else{
-        getCurrentClassifyCards('全部')
-        showThis(getCurrentShowCards(currentPageNum))
-        onload.style.display = 'none'
+        
     }
-    // 搜索内容
-    var searchText = urlParams.get('search');
-    if(searchText!=null){
-        searchCardAndShow(searchText)
-    }
+    
 
     
 }
+
+
 
 
 const showThis = (cards) => {
@@ -433,9 +434,28 @@ const showPageBar = (toPage) => {
     pageBar.appendChild(toPageBtn)
 }
 
+
+
+// 点击分类提示
+const classifyTag = document.getElementsByClassName('classifyTag')
+
+for(let i = 0; i < classifyTag.length; i++){
+    classifyTag[i].addEventListener('click',(e) => {
+        searchCardAndShow(classifyTag[i].innerHTML)
+        e.stopPropagation()
+    })
+}
+
+
 // 搜索并展示
 const searchCardAndShow = (searText)=>{
-    showBar.innerHTML = '搜索 '+searText
+    for(let i = 0; i < classifyTag.length; i++){
+        if(searText == classifyTag[i].innerHTML){
+            classifyTag[i].className = 'classifyTag classifyTagActive'
+        }else{
+            classifyTag[i].className = 'classifyTag'
+        }
+    }
     let current = []
     allCards.forEach(item=>{
         if(item.detail.toLowerCase().includes(searText.toLowerCase())
@@ -450,28 +470,6 @@ const searchCardAndShow = (searText)=>{
     showThis(getCurrentShowCards(1))
 }
 
-// 点击搜索框下提示
-const searchTags = document.getElementsByClassName('searchTag')
-
-for(let i = 0; i < searchTags.length; i++){
-    searchTags[i].addEventListener('click',() => {
-        searchCardAndShow(searchTags[i].innerHTML)
-    })
-}
-
-// 点击主页搜索按钮
-search_btn.addEventListener('click',() => {
-    searchCardAndShow(searchText.value)
-})
-// 搜索框回车
-searchText.addEventListener('keypress', function(event) {
-    // 检查是否按下的是回车键
-    if (event.key === 'Enter') {
-        // 阻止默认行为，防止表单提交或者页面刷新
-        event.preventDefault();
-        searchCardAndShow(searchText.value)
-    }
-});
 
 
 // 点击card 事件 进入 detail 界面
@@ -486,4 +484,5 @@ const cardClick = (card) => {
     }
     window.location.href = ref
 }
+
 

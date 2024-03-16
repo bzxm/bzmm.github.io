@@ -59,6 +59,7 @@
     max-width: 700px;
     height: 200px;
     background-color: #fff;
+    border-radius: 2px;
     box-shadow: #3c3c3c99 0 0 10px;
     display: flex;
     align-items: center;
@@ -82,7 +83,7 @@
     padding-left: 20px;
     font-size: 17px;
     margin-bottom: 20px;
-    border: #3c3c3c solid 1px;
+    border: #3c3c3cb3 dashed 2px;
 }
 .toastInput:hover{
     border: #ff0070 solid 1px;

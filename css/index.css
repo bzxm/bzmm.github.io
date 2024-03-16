@@ -138,7 +138,6 @@ body{
 .card{
     width: 24vw;
     margin-bottom: 20px;
-    margin-left: 10px;
     border-radius: 6px;
     background-color: #fffbf6;
     box-shadow: #aaa 0 0 4px;
@@ -338,7 +337,6 @@ body{
     .card{
         width: 30vw;
         margin-bottom: 20px;
-        margin-left: 10px;
         border-radius: 6px;
         background-color: #fffbf6;
         box-shadow: #aaa 0 0 4px;
@@ -417,9 +415,8 @@ body{
     }
 
     .card{
-        width: 45vw;
+        width: 47vw;
         margin-bottom: 20px;
-        margin-left: 10px;
         border-radius: 6px;
         background-color: #fff;
     }
@@ -427,7 +424,7 @@ body{
         box-shadow: #d6410f 0 0 8px;
     }
     .cover{
-        width: 45vw;
+        width: 47vw;
         height: 30vw;
         background-color: #fffbf6;
 
@@ -482,7 +479,6 @@ body{
     .card{
         width: 81vw;
         margin-bottom: 20px;
-        margin-left: 10px;
         border-radius: 6px;
         background-color: #fffbf6;
     }

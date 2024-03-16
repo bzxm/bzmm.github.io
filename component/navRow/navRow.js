@@ -50,7 +50,8 @@ homeBtn.addEventListener('click',() => {
 
 // 点击菜单栏 精品游戏
 niceGame.addEventListener("click",() => {
-    toHome('精品游戏')
+    let ref = '../../html/classify.html?classify=精品游戏'
+    window.location.href = ref
 })
 // 点击菜单栏 热门游戏
 pcGame.addEventListener("click",() => {
