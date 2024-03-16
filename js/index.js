@@ -17,6 +17,10 @@ const searchText = document.getElementById('searchText')
 const showBar = document.getElementById('showBar')
 
 
+// 主页 页脚数目 默认为：最近更新
+const cardsNum = document.getElementById('cardsNum')
+
+
 // 格式化日期
 function formatDate(str) {
     var today = new Date(+str);
@@ -72,6 +76,8 @@ request.onload = function () {
             cards.push(item)
         }
     })
+
+    cardsNum.innerHTML = cards.length
 
     allCards = cards
 
