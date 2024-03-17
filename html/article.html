@@ -13,20 +13,32 @@
 
 </head>
 <body>
-    <!-- 导航栏 -->
     <div class="navRow">
         <!-- 菜单条 -->
         <div class="menuBar" id="menuBar"></div>
         <!-- 页面标签条 -->
         <div id="homeICO" class="myICOBar">
-            <img src="https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/myICOBar.png?inline=false" alt="" class="myICO">
+            <img src="https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/myICOBar.png?inline=false" alt="点击返回主页" class="myICO">
+        </div>
+        <!-- 搜索按钮 -->
+        <div class="nav_search" id="nav_search"></div>
+        <!-- 搜索弹出框 -->
+        <div id="searchMask">
+            <div id="searchToast">
+                <div class="toastTitle">搜索</div>
+                <input type="text" class="toastInput" id="toastInput" placeholder="搜索你的钟爱">
+                <div class="toastBtn" id="toastBtn"></div>
+                <!-- 关闭按钮 -->
+                <div class="toastClose" id="toastClose"></div>
+            </div>
         </div>
         <!-- 添加一个透明遮罩 -->
         <div id="menuMask"></div>
         <div class="menuSelect" id="menuSelect">
             <div class="menuOption" id="homeBtn">首页</div>
             <div class="menuOption" id="niceGame">精品游戏</div>
-            <!-- <div class="menuOption">热门游戏</div>
+            <div class="menuOption" id="pcGame">热门游戏</div>
+            <!-- 
             <div class="menuOption">动漫漫画</div>
             <div class="menuOption">小说图文</div> -->
         </div>
@@ -90,6 +102,17 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="articleLink">
+            <div class="lastArticle">
+                <div class="lastArticleTitle">上一篇</div>
+                <a class="lastArticleLink" href="http://127.0.0.1:5501/articles/%E7%B2%BE%E5%93%81%E6%B8%B8%E6%88%8F/sOrMESDQsv.html" rel="prev">堕落玩偶：爱欲行动 Ver0.4.9 steam中文破解版&可玩后宫模式 神作 10G</a>
+            </div>
+            <div class="nextArticle">
+                <div class="nextArticleTitle">下一篇</div>
+                <a class="nextArticleLink" href="http://127.0.0.1:5501/articles/%E7%B2%BE%E5%93%81%E6%B8%B8%E6%88%8F/aBMGFrCtYG.html" rel="next">魔女的侵袭 ver1.8.0209.23HF2 中文重制版+全DLC 3D动作冒险游戏 8G</a>
             </div>
         </div>
     </div>

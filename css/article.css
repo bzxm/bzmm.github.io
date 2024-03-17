@@ -32,7 +32,7 @@
 }
 
 .articlePage{
-    width: 98%;
+    width: 96%;
     margin: auto;
     height: auto;
     background-color: #fff;
@@ -263,6 +263,61 @@
     color: #fff;
 }
 
+.articleLink{
+    width: 96%;
+    height: auto;
+    background-color: #fff;
+    margin-top: 30px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+}
+.lastArticle{
+    width: 50%;
+    height: auto;
+    border-right: #9c9c9c dashed 1px;
+}
+.nextArticle{
+    width: 50%;
+    height: auto;
+}
+.lastArticleTitle{
+    font-size: 12px;
+    color: #444;
+    margin-bottom: 5px;
+}
+.nextArticleTitle{
+    font-size: 12px;
+    color: #444;
+    margin-bottom: 5px;
+    text-align: right;
+}
+.lastArticleLink{
+    font-size: 14px;
+    display: inline-block;
+    padding-right: 20px;
+}
+.nextArticleLink{
+    font-size: 14px;
+    width: 100%;
+    display: inline-block;
+    padding-left: 20px;
+    text-align: right;
+}
+a {
+    color: #c8365f; /* 设置链接文本颜色 */
+    text-decoration: none; /* 去除下划线 */
+}
+a:hover {
+    color: rgba(255, 72, 72, 0.918); /* 设置链接文本颜色 */
+    text-decoration: underline; /* 添加下划线 */
+}
+a:active {
+    color: #c8365f; /* 设置链接文本颜色 */
+    text-decoration: none; /* 去除下划线 */
+}
+
+
 /* 当视口宽度小于等于568px时应用以下样式 */
 @media (max-width: 568px) {
     .downLoadBody2{
@@ -333,3 +388,4 @@
     position: fixed;
     z-index: 99;
 }
+
