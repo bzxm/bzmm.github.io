@@ -205,6 +205,8 @@ const showThis = (cards) => {
             ref = '../articles/精品游戏/'+card.id+'.html'
         }else if(card.classify.includes('热门游戏')){
             ref = '../articles/热门游戏/'+card.id+'.html'
+        }else if(card.classify.includes('动漫漫画')){
+            ref = '../articles/动漫漫画/'+card.id+'.html'
         }else{
             ref = '../articles/'+card.id+'.html'
         }
@@ -503,6 +505,8 @@ const cardClick = (card) => {
         ref = '../articles/精品游戏/'+card.id+'.html'
     }else if(card.classify.includes('热门游戏')){
         ref = '../articles/热门游戏/'+card.id+'.html'
+    }else if(card.classify.includes('动漫漫画')){
+        ref = '../articles/动漫漫画/'+card.id+'.html'
     }else{
         ref = '../articles/'+card.id+'.html'
     }
