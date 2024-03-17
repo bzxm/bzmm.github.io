@@ -242,6 +242,10 @@ h1{
 
 
 .cTitle{
+    display: inline-block;
+    text-decoration: none; /* 取消下划线 */
+    color: inherit; /* 使用父元素的文本颜色 */
+
     width: 100%;
     font-size: 17px;
     font-weight: 600;
@@ -450,6 +454,10 @@ h1{
     }
 
     .cTitle{
+        display: inline-block;
+        text-decoration: none; /* 取消下划线 */
+        color: inherit; /* 使用父元素的文本颜色 */
+
         width: 100%;
         font-size: 15px;
         font-weight: 600;

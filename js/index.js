@@ -198,8 +198,17 @@ const showThis = (cards) => {
 
         
 
-        var cTitle = document.createElement('div');
+        var cTitle = document.createElement('a');
         cTitle.className = 'cTitle'
+        let ref = ''
+        if(card.classify.includes('精品游戏')){
+            ref = '../articles/精品游戏/'+card.id+'.html'
+        }else if(card.classify.includes('热门游戏')){
+            ref = '../articles/热门游戏/'+card.id+'.html'
+        }else{
+            ref = '../articles/'+card.id+'.html'
+        }
+        cTitle.href = ref
         cTitle.innerHTML = card.detail
     // 添加到 msg
         msg.appendChild(flag)
