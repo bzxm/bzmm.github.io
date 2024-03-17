@@ -114,7 +114,7 @@ const showThis = (cards) => {
     cards.forEach((card,index) => {
         console.log("card",card);
 
-        // 创建 card
+    // 创建 card
         var card1 = document.createElement('div');
         card1.className = 'card'
         // 添加点击事件
@@ -210,9 +210,14 @@ const showThis = (cards) => {
         }
         cTitle.href = ref
         cTitle.innerHTML = card.detail
+
+        var cTitleH = document.createElement('h2');
+        cTitleH.className = 'cTitle'
+        cTitleH.appendChild(cTitle)
+
     // 添加到 msg
         msg.appendChild(flag)
-        msg.appendChild(cTitle)
+        msg.appendChild(cTitleH)
     // 添加到 card
         card1.appendChild(cover)
         card1.appendChild(msg)
@@ -284,7 +289,7 @@ const showPageBar = (toPage) => {
     pageBar.appendChild(upPage)
     // 判断
     if(toPage <= 3){
-    // 加载 前三页 按钮
+    // 加载 前5页 按钮
         for(let i = 1; i <= Math.min(5,totalPages); i++){
             const firstPage = document.createElement('div')
             firstPage.className = 'pageItem'
@@ -301,12 +306,14 @@ const showPageBar = (toPage) => {
             pageBar.appendChild(firstPage)
         }
         if(totalPages > 5){
-        // 添加省略号
-            const page = document.createElement('div')
-            page.className = 'pageItem'
-            page.innerHTML = '...'
-            // 添加到 分页条
-            pageBar.appendChild(page)
+            if(totalPages != 6){
+            // 添加省略号
+                const page = document.createElement('div')
+                page.className = 'pageItem'
+                page.innerHTML = '...'
+                // 添加到 分页条
+                pageBar.appendChild(page)
+            }
         // 添加最后一列
             const LastPage = document.createElement('div')
             LastPage.className = 'pageItem'
@@ -333,7 +340,7 @@ const showPageBar = (toPage) => {
         // 添加到 分页条
         pageBar.appendChild(firstPage)
     // 添加省略号
-        if(toPage - 5 != 1){
+        if(toPage - 5 > 1){
             const page = document.createElement('div')
             page.className = 'pageItem'
             page.innerHTML = '...'

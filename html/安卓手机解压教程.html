@@ -72,6 +72,7 @@
             <div class="articleBody" id="articleBody">
                 <div id="articleTextArea">
                     <p class="articleP">安卓手机下载及解压教程</p>
+                    <p class="articleP">资源名称凡是带了“安卓”两个字的都是有手机版资源的</p>
                     <p class="articleP">新手用户请耐心看完，教程有点长，一遍看不明白，就多看几遍!</p>
                     <p class="articlePTitle">第一步：下载</p>
                     <p class="articleP">选择你要下载的安卓资源，一般安卓资源文件名中会包含apk、安卓等字眼</p>
@@ -140,8 +141,31 @@
             </div>
         </div>
     </div>
-
+    <script>
+        if (!sessionStorage.getItem('hasVisited_question_androidRAR')) {
+            var script = document.createElement('script');
+            script.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
+            script.async = 'true'; 
+            var pageViewsElement = document.getElementById('busuanzi_value_page_pv');
+            var observer = new MutationObserver(function (mutationsList) { 
+                for (var mutation of mutationsList) { 
+                    if (mutation.type === 'childList' && mutation.target.id === 'busuanzi_value_page_pv') {
+                        var newPageViews = mutation.target.innerHTML; 
+                        sessionStorage.setItem('visit_question_androidRAR', newPageViews); 
+                        observer.disconnect();
+                    } 
+                } 
+            }); 
+            var config = { childList: true }; 
+            observer.observe(pageViewsElement, config); 
+            document.head.appendChild(script); 
+            sessionStorage.setItem('hasVisited_question_androidRAR', 'true');
+        } else { 
+            document.getElementById('busuanzi_value_page_pv').innerHTML = sessionStorage.getItem('visit_question_androidRAR'); 
+        }
+    </script>
     <script src="../component/navRow/navRow.js"></script>
+    <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool/disable-devtool.min.js'></script>
     <script src="../js/article.js"></script>
 </body>
 </html>

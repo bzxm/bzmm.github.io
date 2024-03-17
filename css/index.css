@@ -338,6 +338,69 @@ h1{
     margin: auto 10px;
     color: #d6410f;
 }
+
+.noticeCards{
+    width: 100%;
+    margin-top: 20px;
+    height: auto;
+}
+.noticeCard{
+    text-decoration: none; /* 取消下划线 */
+    color: inherit; /* 使用父元素的文本颜色 */
+    display: inline-block;
+    width: 95%;
+    height: auto;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    background-color: #fff;
+    cursor: pointer;
+}
+.noticeCard:hover{
+    position: relative;
+    box-shadow: #5e5e5e7b 0 0 8px;
+}
+.noticeIcon_question{
+    width: 24px;
+    height: 24px;
+    background:url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/%E9%97%AE%E9%A2%98.png?inline=false') center;
+    background-size: cover;
+}
+.noticeIcon_fire{
+    width: 24px;
+    height: 24px;
+    background:url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/%E7%83%AD%E9%97%A8.png?inline=false') center;
+    background-size: cover;
+}
+.noticeText{
+    flex: 1;
+    height: 24px;
+    line-height: 24px;
+    color: #6a7177;
+    font-size: 16px;
+    font-weight: normal;
+    padding-left: 20px;
+}
+.noticeCard:hover .noticeIcon_question{
+    width: 24px;
+    height: 24px;
+    background:url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/%E9%97%AE%E9%A2%98_p.png?inline=false') center;
+    background-size: cover;
+}
+.noticeCard:hover .noticeIcon_fire{
+    width: 24px;
+    height: 24px;
+    background:url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/%E7%83%AD%E9%97%A8_p.png?inline=false') center;
+    background-size: cover;
+}
+.noticeCard:hover .noticeText{
+    flex: 1;
+    height: 24px;
+    color: #de5283;
+    padding-left: 20px;
+}
+
+
 /* 当视口宽度小于等于768px时应用以下样式 */
 @media (max-width: 1200px) {
     .card{

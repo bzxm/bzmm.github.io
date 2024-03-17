@@ -266,6 +266,7 @@
 .articleLink{
     width: 96%;
     height: auto;
+    margin: auto;
     background-color: #fff;
     margin-top: 30px;
     padding: 20px;

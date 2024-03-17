@@ -33,10 +33,13 @@
 const gotoDown = document.getElementById('gotoDown')
 
 
-gotoDown.addEventListener('click',() => {
-    const downLoad = document.getElementById('downLoad')
-    downLoad.scrollIntoView({behavior:'smooth'})
-})
+if(gotoDown != null){
+    gotoDown.addEventListener('click',() => {
+        const downLoad = document.getElementById('downLoad')
+        downLoad.scrollIntoView({behavior:'smooth'})
+    })
+}
+
 
 function goLink(link){
     document.location.href = link
