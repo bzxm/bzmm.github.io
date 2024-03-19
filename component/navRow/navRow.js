@@ -55,7 +55,8 @@ niceGame.addEventListener("click",() => {
 })
 // 点击菜单栏 热门游戏
 pcGame.addEventListener("click",() => {
-    toHome('热门游戏')
+    let ref = '../../html/classify.html?classify=热门游戏'
+    window.location.href = ref
 })
 
 

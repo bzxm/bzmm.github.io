@@ -49,6 +49,7 @@
     width: 100vw;
     height: 100vh;
     background-color: #3c3c3c4b;
+    transition: all 0.3s;
 }
 #searchToast{
     position: relative;

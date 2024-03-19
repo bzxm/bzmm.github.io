@@ -359,6 +359,7 @@ h1{
 .noticeCard:hover{
     position: relative;
     box-shadow: #5e5e5e7b 0 0 8px;
+    background-color: #ffffff;
 }
 .noticeIcon_question{
     width: 24px;
@@ -396,7 +397,7 @@ h1{
 .noticeCard:hover .noticeText{
     flex: 1;
     height: 24px;
-    color: #de5283;
+    color: #ce3268;
     padding-left: 20px;
 }
 
@@ -579,6 +580,17 @@ h1{
     font-size: 20px;
     color: #222222;
     padding-bottom: 6px;
+    margin: auto 15px;
     letter-spacing: 2px;
     border-bottom: #ff0070 solid 4px;
+}
+#Bar{
+    text-decoration: none;
+    color: #222222;
+    cursor: pointer;
+    margin: auto 15px;
+    letter-spacing: 1px;
+}
+#Bar:hover{
+    color: #ff3a7f;
 }

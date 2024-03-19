@@ -32,8 +32,20 @@
 }
 .classifyTags{
     flex: 1;
+    display: none;
+    flex-wrap: wrap;
+}
+.classifyTagsQuest{
+    flex: 1;
     display: flex;
     flex-wrap: wrap;
+}
+.classifyTag{
+    cursor: pointer;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin: 4px 6px;
+    padding: 4px;
 }
 .classifyTag{
     cursor: pointer;
