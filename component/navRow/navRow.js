@@ -90,3 +90,32 @@ toastClose.addEventListener('click',() => {
 toastBtn.addEventListener('click',() => {
     toHomeSearch(toastInput.value);
 })
+
+
+// 上下滑动页面显示隐藏下方导航栏
+var lastScrollTop = 0;
+const container2 = document.getElementById('container')
+const navBottom = document.getElementById('navBottom')
+container2.addEventListener("scroll", function() {
+    var currentScroll = container2.scrollTop
+
+    if (currentScroll > lastScrollTop) {
+       console.log('下');
+       navBottom.style.bottom = '-100px'
+    } else {
+        console.log('上');
+        navBottom.style.bottom = '0px'
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // 当滚动到顶部时重置
+});
+
+// 设置点击事件
+document.getElementById('navBottomHomeBar').addEventListener('click',() => {
+    document.location.href = '/'
+})
+document.getElementById('navBottomRandBar').addEventListener('click',() => {
+    
+    document.location.href = '../../html/random.html'
+})
+

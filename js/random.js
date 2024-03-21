@@ -13,12 +13,8 @@ const search_btn = document.getElementById('search_btn')
 // 主页搜索框 search_btn
 const searchText = document.getElementById('searchText')
 
-// 主页 分类名称 默认为：最近更新
-const showBar = document.getElementById('showBar')
-
-
-// 主页 页脚数目 默认为：最近更新
-const cardsNum = document.getElementById('cardsNum')
+// 主页 分类名称 默认为： 精品游戏
+const classifyTitle = document.getElementById('classifyTitle')
 
 
 // 格式化日期
@@ -55,63 +51,64 @@ let currentPageNum = 1
 // 总共多少页
 let totalPages
 
-var url = "../data/webCards.json"
-// 申明一个XMLHttpRequest
-var request = new XMLHttpRequest();
-// 设置请求方法与路径
-request.open("get", url);
-// 不发送数据到服务器
-request.send(null);
-//XHR对象获取到返回信息后执行
-request.onload = function () {
-    // 解析获取到的数据
-    var cards1 = JSON.parse(request.responseText);
-    var cards = []
-    
+onload.style.display = 'block'
 
-    // 清除 null
-    cards1.forEach(item=>{
-        if(item!=null){
-            cards.push(item)
-        }
-    })
+window.onload = () => {
+    var url = "../data/webCards.json"
+    // 申明一个XMLHttpRequest
+    var request = new XMLHttpRequest();
+    // 设置请求方法与路径
+    request.open("get", url);
+    // 不发送数据到服务器
+    request.send(null);
+    //XHR对象获取到返回信息后执行
+    request.onload = function () {
+        // 解析获取到的数据
+        var cards1 = JSON.parse(request.responseText);
+        var cards = []
+        
+        console.log('data:',cards)
 
-    cardsNum.innerHTML = cards.length
+        // 清除 null
+        cards1.forEach(item=>{
+            if(item!=null){
+                cards.push(item)
+            }
+        })
 
-    allCards = cards
+        allCards = cards
 
-    // 判断该展示的内容
-    // 解析 URL 中的参数
-    var urlParams = new URLSearchParams(window.location.search);
-    var classifyValue = urlParams.get('classify');
-    if(classifyValue!=null){
-        getCurrentClassifyCards(classifyValue)
+        currentClassifyCards = shuffleArray(cards)
         currentPageNum = 1
         showThis(getCurrentShowCards(currentPageNum))
         // 滚动到页面顶部
         container.scrollTo(0, 0);
+        
         onload.style.display = 'none'
 
-    }else{
-        getCurrentClassifyCards('全部')
-        showThis(getCurrentShowCards(currentPageNum))
-        onload.style.display = 'none'
-    }
-    // 搜索内容
-    var searchText = urlParams.get('search');
-    if(searchText!=null){
-        searchCardAndShow(searchText)
     }
 
     
 }
 
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    // 计算总页数
+    totalPages = Math.ceil(array.length / perPageNum);
+    return array;
+}
+
+
 const showThis = (cards) => {
     cardList.innerHTML = ''
     cards.forEach((card,index) => {
+        console.log("card",card);
 
-    // 创建 card
+        // 创建 card
         var card1 = document.createElement('div');
         card1.className = 'card'
         // 添加点击事件
@@ -124,7 +121,7 @@ const showThis = (cards) => {
     // 创建 cover_img
         var cover_img = document.createElement('img')
         cover_img.src = card.cover;
-        cover_img.alt = "图片太赞,被外星人偷走了..."
+        cover_img.alt = "图片过于刺激🔞无法展示..."
         cover_img.className = 'cover_img'
         // 添加加载监听
         cover_img.addEventListener('load',() => {
@@ -195,28 +192,12 @@ const showThis = (cards) => {
 
         
 
-        var cTitle = document.createElement('a');
+        var cTitle = document.createElement('div');
         cTitle.className = 'cTitle'
-        let ref = ''
-        if(card.classify.includes('精品游戏')){
-            ref = '../articles/精品游戏/'+card.id+'.html'
-        }else if(card.classify.includes('热门游戏')){
-            ref = '../articles/热门游戏/'+card.id+'.html'
-        }else if(card.classify.includes('动漫漫画')){
-            ref = '../articles/动漫漫画/'+card.id+'.html'
-        }else{
-            ref = '../articles/'+card.id+'.html'
-        }
-        cTitle.href = ref
         cTitle.innerHTML = card.detail
-
-        var cTitleH = document.createElement('h2');
-        cTitleH.className = 'cTitle'
-        cTitleH.appendChild(cTitle)
-
     // 添加到 msg
         msg.appendChild(flag)
-        msg.appendChild(cTitleH)
+        msg.appendChild(cTitle)
     // 添加到 card
         card1.appendChild(cover)
         card1.appendChild(msg)
@@ -225,30 +206,13 @@ const showThis = (cards) => {
     });
 }
 
-// 根据分类名获取当前分类所有card
-const getCurrentClassifyCards = (classify) => {
-    if(classify == '全部'){
-        // 计算总页数
-        totalPages = Math.ceil(allCards.length / perPageNum);
-        currentClassifyCards = allCards
-    }else{
-        let cur = []
-        allCards.forEach(card=>{
-            if(card.classify != undefined && card.classify.includes(classify)){
-                cur.push(card)
-            }
-        })
-        // 计算总页数
-        totalPages = Math.ceil(cur.length / perPageNum);
-        currentClassifyCards = cur;
-    }
-}
 
 // 根据目标页面获取当前应展示card
 const getCurrentShowCards = (toPage) => {
     
      // 确保页数在有效范围内
      if (toPage < 1 || toPage > totalPages) {
+        console.log('页数超出范围');
         return [];
     }
     currentPageNum = toPage
@@ -286,7 +250,7 @@ const showPageBar = (toPage) => {
     pageBar.appendChild(upPage)
     // 判断
     if(toPage <= 3){
-    // 加载 前5页 按钮
+    // 加载 前三页 按钮
         for(let i = 1; i <= Math.min(5,totalPages); i++){
             const firstPage = document.createElement('div')
             firstPage.className = 'pageItem'
@@ -303,14 +267,12 @@ const showPageBar = (toPage) => {
             pageBar.appendChild(firstPage)
         }
         if(totalPages > 5){
-            if(totalPages != 6){
-            // 添加省略号
-                const page = document.createElement('div')
-                page.className = 'pageItem'
-                page.innerHTML = '...'
-                // 添加到 分页条
-                pageBar.appendChild(page)
-            }
+        // 添加省略号
+            const page = document.createElement('div')
+            page.className = 'pageItem'
+            page.innerHTML = '...'
+            // 添加到 分页条
+            pageBar.appendChild(page)
         // 添加最后一列
             const LastPage = document.createElement('div')
             LastPage.className = 'pageItem'
@@ -337,7 +299,7 @@ const showPageBar = (toPage) => {
         // 添加到 分页条
         pageBar.appendChild(firstPage)
     // 添加省略号
-        if(toPage - 5 > 1){
+        if(toPage - 5 != 1){
             const page = document.createElement('div')
             page.className = 'pageItem'
             page.innerHTML = '...'
@@ -452,9 +414,28 @@ const showPageBar = (toPage) => {
     pageBar.appendChild(toPageBtn)
 }
 
+
+
+// 点击分类提示
+const classifyTag = document.getElementsByClassName('classifyTag')
+
+for(let i = 0; i < classifyTag.length; i++){
+    classifyTag[i].addEventListener('click',(e) => {
+        searchCardAndShow(classifyTag[i].innerHTML)
+        e.stopPropagation()
+    })
+}
+
+
 // 搜索并展示
 const searchCardAndShow = (searText)=>{
-    showBar.innerHTML = '搜索 '+searText
+    for(let i = 0; i < classifyTag.length; i++){
+        if(searText == classifyTag[i].innerHTML){
+            classifyTag[i].className = 'classifyTag classifyTagActive'
+        }else{
+            classifyTag[i].className = 'classifyTag'
+        }
+    }
     let current = []
     allCards.forEach(item=>{
         if(item.detail.toLowerCase().includes(searText.toLowerCase())
@@ -469,28 +450,6 @@ const searchCardAndShow = (searText)=>{
     showThis(getCurrentShowCards(1))
 }
 
-// 点击搜索框下提示
-const searchTags = document.getElementsByClassName('searchTag')
-
-for(let i = 0; i < searchTags.length; i++){
-    searchTags[i].addEventListener('click',() => {
-        searchCardAndShow(searchTags[i].innerHTML)
-    })
-}
-
-// 点击主页搜索按钮
-search_btn.addEventListener('click',() => {
-    searchCardAndShow(searchText.value)
-})
-// 搜索框回车
-searchText.addEventListener('keypress', function(event) {
-    // 检查是否按下的是回车键
-    if (event.key === 'Enter') {
-        // 阻止默认行为，防止表单提交或者页面刷新
-        event.preventDefault();
-        searchCardAndShow(searchText.value)
-    }
-});
 
 
 // 点击card 事件 进入 detail 界面
@@ -500,11 +459,10 @@ const cardClick = (card) => {
         ref = '../articles/精品游戏/'+card.id+'.html'
     }else if(card.classify.includes('热门游戏')){
         ref = '../articles/热门游戏/'+card.id+'.html'
-    }else if(card.classify.includes('动漫漫画')){
-        ref = '../articles/动漫漫画/'+card.id+'.html'
     }else{
         ref = '../articles/'+card.id+'.html'
     }
     window.location.href = ref
 }
+
 
