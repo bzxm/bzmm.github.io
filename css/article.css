@@ -36,6 +36,7 @@
     margin: auto;
     height: auto;
     background-color: #fff;
+    box-shadow: #b3b3b39f 0 0 8px;
     padding: 24px;
     border-radius: 10px;
 }
@@ -121,10 +122,10 @@
 
 .articleImg{
     display: none;
-    margin: 10px auto;
+    margin: 5px auto;
     width: 90%;
     max-width: 600px;
-    border-radius: 10px;
+    border-radius: 6px;
     height: auto;
     transition: all 0.3s;
 }
@@ -135,10 +136,8 @@
 
 .articleimg{
     display: block;
-    margin: 10px auto;
     width: 90%;
     max-width: 600px;
-    border-radius: 10px;
     height: auto;
     transition: all 0.3s;
 }
@@ -267,7 +266,10 @@
 .articleLink{
     width: 96%;
     height: auto;
-    margin: auto;
+    margin: 10px auto;
+    
+    border-radius: 10px;
+    box-shadow: #7b8691 0 0 8px;
     background-color: #fff;
     margin-top: 30px;
     padding: 20px;
