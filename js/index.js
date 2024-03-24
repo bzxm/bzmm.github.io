@@ -382,12 +382,13 @@ const showPageBar = (toPage) => {
             pageBar.appendChild(page)
         }
     // 加载 中间五页 按钮
-        for(let i = toPage-2; i <= toPage+2; i++){
+        for(let i = toPage-2; i <= toPage + 2; i++){
             const thePage = document.createElement('div')
             thePage.className = 'pageItem'
             if(i == toPage){
                 thePage.className = 'pageItem pageItemActive'
             }
+            console.log('添加第 '+ i + " 个,toPage为："+(i <= toPage));
             // 添加点击事件
             thePage.addEventListener('click',() => {
                 if(i == currentPageNum)return
@@ -446,7 +447,7 @@ const showPageBar = (toPage) => {
     // 添加点击事件
     toPageBtn.addEventListener('click',() => {
         const toPage = document.getElementById('pageInput').value
-        showThis(getCurrentShowCards(toPage))
+        showThis(getCurrentShowCards(+toPage))
     })
     // 添加到 分页条
     pageBar.appendChild(toPageBtn)
