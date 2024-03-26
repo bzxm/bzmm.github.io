@@ -1,0 +1,72 @@
+  /* 样式部分 */
+  .slider-container {
+    position: relative;
+    margin: 10px auto;
+    width: 96vw;
+    max-width: 1000px;
+    overflow: hidden;
+  }
+
+  .slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  .slide {
+    width: 100%;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-decoration: none;
+  }
+
+  .slide-content {
+    height: 52vw;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    padding-bottom: 52px;
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.868);
+    letter-spacing: 4px;
+    font-weight: 600;
+  }
+
+  .slideNav {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 1; /* 确保导航点在上层 */
+  }
+
+  .slideDot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: rgba(249, 197, 200, 0.652);
+    border-radius: 50%;
+    margin: 0 8px;
+    cursor: pointer;
+  }
+
+  .slideDot.active {
+    background-color: rgba(255, 59, 88, 0.911);
+  }
+
+
+  @media (max-width: 500px) {
+    .slideDot{
+      margin: 0 4px;
+    }
+  }

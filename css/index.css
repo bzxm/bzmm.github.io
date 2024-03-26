@@ -348,7 +348,7 @@ h1{
     text-decoration: none; /* 取消下划线 */
     color: inherit; /* 使用父元素的文本颜色 */
     display: inline-block;
-    width: 95%;
+    width: 96vw;
     height: auto;
     margin: auto;
     padding: 10px 20px;
@@ -399,6 +399,15 @@ h1{
     height: 24px;
     color: #ce3268;
     padding-left: 20px;
+}
+
+
+
+.gundong{
+    width: 96vw;
+    height: 56vw;
+    background-color: #5994e188;
+    margin: 10px auto;
 }
 
 
