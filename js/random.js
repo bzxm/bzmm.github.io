@@ -120,8 +120,8 @@ const showThis = (cards) => {
         cover.className = 'cover'
     // 创建 cover_img
         var cover_img = document.createElement('img')
-        cover_img.src = card.cover;
-        cover_img.alt = "图片过于刺激🔞无法展示..."
+        cover_img.src = card.cover + 'dddd.dif';
+        cover_img.alt = card.detail+"   该图片过于刺激🔞无法展示..."
         cover_img.className = 'cover_img'
         // 添加加载监听
         cover_img.addEventListener('load',() => {

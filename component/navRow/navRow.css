@@ -56,11 +56,11 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    width: 70%;
+    width: 80%;
     max-width: 700px;
-    height: 200px;
+    height: 240px;
     background-color: #fff;
-    border-radius: 2px;
+    border-radius: 10px;
     box-shadow: #3c3c3c99 0 0 10px;
     display: flex;
     align-items: center;
@@ -73,6 +73,7 @@
     font-size: 24px;
     color: #fc85a7;
     letter-spacing: 8px;
+    margin-bottom: 10px;
 }
 .toastInput{
     width: 80%;
@@ -83,8 +84,8 @@
     letter-spacing: 2px;
     padding-left: 20px;
     font-size: 17px;
-    margin-bottom: 20px;
-    border: #3c3c3cb3 dashed 1px;
+    margin-bottom: 30px;
+    border: #ff0070 dashed 1px;
 }
 .toastInput:hover{
     border: #ff0070 solid 1px;
@@ -216,5 +217,40 @@
         color: #444;
         line-height: 25px;
         text-align: center;
+    }
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+    .navRow{
+        background-color: #232323;
+        box-shadow: #13131386 0 2px 6px;
+    }
+    .navBottomBar{
+        background-color: #ffffffdc;
+    }
+    .nBBIText{
+        color: #444;
+    }
+    #searchToast{
+        background-color: #3d3d3d;
+        border: #0000009a solid 1px;
+    }
+    .toastInput{
+        background-color: #999;
+    }
+    .toastInput::placeholder{
+        color: #373737ca;
+        font-size: 15px;
+    }
+    .menuSelect{
+        background-color: #232323;
+    }
+    .menuOption{
+        color: #ccc;
+    }
+    .menuOption:hover{
+        background-color: #aaa;
     }
 }

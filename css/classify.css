@@ -60,3 +60,13 @@
     border-radius: 6px;
     padding: 4px;
 }
+
+
+@media (prefers-color-scheme: dark) {
+    .classifyRow{
+        width: 94vw;
+        background-color: #333333;
+        color: #eee;
+    }
+
+}

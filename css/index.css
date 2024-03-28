@@ -401,7 +401,10 @@ h1{
     padding-left: 20px;
 }
 
-
+.cardsNum{
+    display: inline-block;
+    display: flex;
+}
 
 .gundong{
     width: 96vw;
@@ -594,13 +597,72 @@ h1{
     letter-spacing: 2px;
     border-bottom: #ff0070 solid 4px;
 }
-#Bar{
+.Bar{
     text-decoration: none;
     color: #222222;
     cursor: pointer;
     margin: auto 15px;
     letter-spacing: 1px;
 }
-#Bar:hover{
+.Bar:hover{
     color: #ff3a7f;
+}
+
+
+
+
+
+@media (prefers-color-scheme: dark) {
+    body{
+        background-color: #121212;
+    }
+    .tagTitle{
+        color: rgb(210, 130, 45);
+    }
+
+    .noticeCard{
+        background-color: #232323;
+    }
+    .noticeCard:hover{
+        position: relative;
+        box-shadow: #5e5e5e00 0 0 8px;
+        background-color: #333333;
+    }
+    .noticeText{
+        color: #bbb;
+    }
+    .bar{
+        color: #ed5a5a;
+        
+        border-bottom: #ff828f solid 4px;
+    }
+    .Bar{
+        color: #aaa;
+    }
+    .card{
+        background-color: #303030;
+        box-shadow: #040404 0 0 4px;
+        transition: all 0.3s;
+    }
+    .card:hover{
+        box-shadow: #de899a00 0 0 8px;
+        border: solid 1px #ff6e8e;
+        transform: translateY(-4px);
+    }
+    .cover{
+        background-color: #303030;
+    }
+    .cTitle{
+        color: #eee;
+        font-weight: normal;
+    }
+    img{
+        color: #eee;
+    }
+    
+    .tailer{
+        border-top: #151515 dashed 2px;
+        color: #ccc;
+    }
+
 }

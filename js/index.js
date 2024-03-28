@@ -124,7 +124,7 @@ const showThis = (cards) => {
     // 创建 cover_img
         var cover_img = document.createElement('img')
         cover_img.src = card.cover;
-        cover_img.alt = "图片太赞,被外星人偷走了..."
+        cover_img.alt = card.detail+"   该图片过于刺激🔞无法展示..."
         cover_img.className = 'cover_img'
         // 添加加载监听
         cover_img.addEventListener('load',() => {
@@ -163,7 +163,7 @@ const showThis = (cards) => {
             cardConfig.className = 'cardConfigPink'
             cardConfig.innerHTML = classifies[0]
             cardConfig.addEventListener('click',(e) => {
-                searchCardAndShow(classifies[0])
+                searchCardAndShowOnNewPage(classifies[0])
                 e.stopPropagation()
             })
             flag.appendChild(cardConfig)
@@ -173,7 +173,7 @@ const showThis = (cards) => {
                 cardConfig.className = 'cardConfigFire'
                 cardConfig.innerHTML = '神级大作'
                 cardConfig.addEventListener('click',(e) => {
-                    searchCardAndShow('神级大作')
+                    searchCardAndShowOnNewPage('神级大作')
                     e.stopPropagation()
                 })
                 flag.appendChild(cardConfig)
@@ -186,7 +186,7 @@ const showThis = (cards) => {
                     cardConfig.className = 'cardConfigGreen'
                     cardConfig.innerHTML = classifies[i]
                     cardConfig.addEventListener('click',(e) => {
-                        searchCardAndShow(classifies[i])
+                        searchCardAndShowOnNewPage(classifies[i])
                         e.stopPropagation()
                     })
                     flag.appendChild(cardConfig)
@@ -464,10 +464,17 @@ const searchCardAndShow = (searText)=>{
             current.push(item)
         }
     })
+    document.getElementById('main-slider').style.display = 'none'
     currentClassifyCards = current
     // 计算总页数
     totalPages = Math.ceil(currentClassifyCards.length / perPageNum);
     showThis(getCurrentShowCards(1))
+}
+
+// 跳转新页面搜索并展示
+const searchCardAndShowOnNewPage = (searText)=>{
+    let ref = '../../index.html?search='+searText
+    window.location.href = ref
 }
 
 // 点击搜索框下提示
@@ -475,13 +482,13 @@ const searchTags = document.getElementsByClassName('searchTag')
 
 for(let i = 0; i < searchTags.length; i++){
     searchTags[i].addEventListener('click',() => {
-        searchCardAndShow(searchTags[i].innerHTML)
+        searchCardAndShowOnNewPage(searchTags[i].innerHTML)
     })
 }
 
 // 点击主页搜索按钮
 search_btn.addEventListener('click',() => {
-    searchCardAndShow(searchText.value)
+    searchCardAndShowOnNewPage(searchText.value)
 })
 // 搜索框回车
 searchText.addEventListener('keypress', function(event) {
@@ -489,7 +496,7 @@ searchText.addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
         // 阻止默认行为，防止表单提交或者页面刷新
         event.preventDefault();
-        searchCardAndShow(searchText.value)
+        searchCardAndShowOnNewPage(searchText.value)
     }
 });
 
