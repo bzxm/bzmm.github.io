@@ -32,7 +32,7 @@
 }
 
 .articlePage{
-    width: 96%;
+    width: 98%;
     margin: auto;
     height: auto;
     background-color: #fff;
@@ -264,15 +264,10 @@
 }
 
 .articleLink{
-    width: 96%;
+    width: 100%;
     height: auto;
     margin: 10px auto;
-    
-    border-radius: 10px;
-    box-shadow: #7b8691 0 0 8px;
-    background-color: #fff;
-    margin-top: 30px;
-    padding: 20px;
+    padding: 5px;
     box-sizing: border-box;
     display: flex;
 }
@@ -321,6 +316,108 @@ a:active {
     text-decoration: none; /* 去除下划线 */
 }
 
+.articleTags{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 12px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+.articleTag{
+    padding: 4px 8px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.articleTag1{
+    background-color: #ff5e5c;
+}
+.articleTag2{
+    background-color: #ffbb50;
+}
+.articleTag3{
+    background-color: #1ac756;
+}
+.articleTag4{
+    background-color: #19b5fe;
+}
+.articleTag:hover{
+    opacity: 0.8;
+}
+
+.relative{
+    text-align: center;
+    margin: 20px 0;
+    color: #c8365f;
+    font-size: 18px;
+    user-select: none;
+}
+.relative::before{
+    content: '❤ ';
+}
+.relationalCards{
+    width: 100vw;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.card{
+    width: 47vw;
+    height: 32vw;
+    border-radius: 10px;
+    box-shadow: #a7a7a7aa 0 0 6px;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all 0.3s;
+    margin-bottom: 10px;
+    cursor: pointer;
+    position: relative;
+}
+.card:hover{
+    transform: translateY(-4px);
+    box-shadow: #ff92b1 0 0 8px;
+}
+.cardCover{
+    width: 47vw;
+    height: 32vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.cardMask{
+    width: 47vw;
+    height: 32vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background:linear-gradient(to bottom, #3636361b,#121212a9);
+}
+.cardMsg{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 16px;
+    font-size: 13px;
+    padding: 0 16px;
+    color: #fff;
+}
+
+.noticeImport{
+    margin: 30px auto;
+    padding: 20px;
+    color: #ff6021d1;
+    font-size: 14px;
+    letter-spacing: 2px;
+    line-height: 26px;
+    border-radius: 4px;
+    font-weight: 600;
+    background-color: #ffe4e973;
+}
 
 /* 当视口宽度小于等于568px时应用以下样式 */
 @media (max-width: 568px) {
@@ -352,16 +449,15 @@ a:active {
     }
 
     .gotoDown{
-        position: static; /* 或者其他适合的值，如 relative */
+        position: static;
+        height: 22px;
+        right: 0px;
         top: auto;
-        left: auto;
         font-size: 12px;
         color: #fa5e8b;
         border:#c8365f solid 1px;
-        padding: 2px 8px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        padding: 2px 12px;
+        margin: 4px 10px;
         border-radius: 4px;
         cursor: pointer;
         transform: translateY(0);
@@ -384,12 +480,52 @@ a:active {
     }
 }
 
-.navRow{
-    width: 100vw;
-    height: 60px;
-    background: #fff;
-    box-shadow: #a7a7a786 0 2px 6px;
-    position: fixed;
-    z-index: 99;
-}
 
+
+
+@media (prefers-color-scheme: dark) {
+    body{
+        background-color: #121212;
+    }
+    .detailContainer{
+        background-color: #121212;
+    }
+    .articlePage{
+        background-color: #232323;
+        box-shadow: #121212 0 0 6px;
+        color: #fff;
+    }
+    .noticeImport{
+        background-color: #121212;
+        color: #dea920;
+    }
+    .card{
+        box-shadow: none;
+    }
+
+    
+    .downLoadArea{
+        border: #fc4c7e dashed 2px;
+    }
+    .downLoadArea:hover{
+        background-color: #1d1a1b;
+    }
+    .downLoadArea:hover .downLoadTitle{
+        background-color: #1d1a1b;
+    }
+    .downLoadTitle{
+        color: #e9386a;
+        background-color: #232323;
+    }
+    .downLoadText{
+        color: #e9386a;
+    }
+    .downLoadBtn{
+        background-color: #fa5e8b;
+        color: #fff;
+    }
+    .downLoadBtn:hover{
+        background-color: #c8365f;
+        box-shadow: #981a3e 0 0 10px;
+    }
+}

@@ -44,3 +44,13 @@ if(gotoDown != null){
 function goLink(link){
     document.location.href = link
 }
+
+const articleTags = document.getElementById('articleTags')
+const tags = articleTags.children;
+for(let i = 0; i < tags.length; i++){
+    tags[i].addEventListener('click',() => {
+        // 搜索标签
+        let ref = '../../index.html?search='+tags[i].innerHTML
+        window.location.href = ref
+    })
+}
