@@ -6,6 +6,7 @@ const cardList = document.getElementById('cardList')
 const pageBar = document.getElementById('pageBar')
 // 加载页面 onload
 const onload = document.getElementById('onload')
+const load_text = document.getElementById('load_text')
 
 
 // 主页搜索按钮 search_btn
@@ -64,6 +65,9 @@ request.open("get", url);
 request.send(null);
 //XHR对象获取到返回信息后执行
 request.onload = function () {
+    // 修改 load_text 的文字
+    load_text.innerHTML = '正在进入'
+
     // 解析获取到的数据
     var cards1 = JSON.parse(request.responseText);
     var cards = []
@@ -95,6 +99,7 @@ request.onload = function () {
     }else{
         getCurrentClassifyCards('全部')
         showThis(getCurrentShowCards(currentPageNum))
+        // 隐藏onload
         onload.style.display = 'none'
     }
     // 搜索内容
@@ -204,6 +209,10 @@ const showThis = (cards) => {
             ref = '../articles/热门游戏/'+card.id+'.html'
         }else if(card.classify.includes('动漫漫画')){
             ref = '../articles/动漫漫画/'+card.id+'.html'
+        }else if(card.classify.includes('小说图文')){
+            ref = '../articles/小说图文/'+card.id+'.html'
+        }else if(card.classify.includes('软件合集')){
+            ref = '../articles/软件合集/'+card.id+'.html'
         }else{
             ref = '../articles/'+card.id+'.html'
         }
@@ -510,6 +519,10 @@ const cardClick = (card) => {
         ref = '../articles/热门游戏/'+card.id+'.html'
     }else if(card.classify.includes('动漫漫画')){
         ref = '../articles/动漫漫画/'+card.id+'.html'
+    }else if(card.classify.includes('小说图文')){
+        ref = '../articles/小说图文/'+card.id+'.html'
+    }else if(card.classify.includes('软件专区')){
+        ref = '../articles/软件专区/'+card.id+'.html'
     }else{
         ref = '../articles/'+card.id+'.html'
     }

@@ -419,6 +419,28 @@ a:active {
     background-color: #ffe4e973;
 }
 
+.feedback{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    margin-top: 6px;
+}
+.feedbackLink{
+    color: #6f53ea;
+    text-decoration: underline;
+}
+.feedbackLink::before{
+    content: '★ ';
+}
+.feedbackLink::after{
+    content: ' ★';
+}
+.description{
+    font-size: 12px;
+}
+
 /* 当视口宽度小于等于568px时应用以下样式 */
 @media (max-width: 568px) {
     .downLoadBody2{
