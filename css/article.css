@@ -121,9 +121,9 @@
 }
 
 .articleImg{
-    display: none;
+    display: block;
     margin: 5px auto;
-    width: 90%;
+    width: 96%;
     max-width: 600px;
     border-radius: 6px;
     height: auto;
@@ -132,6 +132,9 @@
 .articleImg:hover{
     box-shadow: #c8365f 0 0 10px;
     transform: scale(0.99);
+}
+.articleP .articleImg{
+    width: 100%;
 }
 
 .articleimg{
@@ -160,10 +163,10 @@
     border-radius: 20px;
 }
 .downLoadArea:hover{
-    background-color: #ffd5e1;
+    border-style: solid;
 }
 .downLoadArea:hover .downLoadTitle{
-    background-color: #ffd5e1;
+    border: #e66388 solid 2px;
 }
 .downLoadTitle{
     display: inline-block;
@@ -227,11 +230,14 @@
 }
 .downLoad2Key{
     font-weight: 600;
+    margin-top: 4px;
     letter-spacing: 4px;
     font-size: 14px;
     line-height: 30px;
     text-align: center;
-    color: #e50000;
+    color: #ff6021;
+    background: #cdf2d6;
+    border-radius: 6px;
 }
 .downLoad2Right{
     width: 50%;
@@ -400,8 +406,11 @@ a:active {
 .cardMsg{
     width: 100%;
     height: auto;
+    max-height: 48px;
+    overflow: hidden;
     position: absolute;
     bottom: 16px;
+    line-height: 16px;
     font-size: 13px;
     padding: 0 16px;
     color: #fff;
@@ -441,8 +450,29 @@ a:active {
     font-size: 12px;
 }
 
+#articleImgArea{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+
+/* @media(min-width: 1000px) {
+    
+    .articleImg{
+        display: inline-block;
+        margin: 5px 5px;
+        width: 45%;
+        max-width: 600px;
+        border-radius: 6px;
+        height: auto;
+        transition: all 0.3s;
+    }
+} */
+
 /* 当视口宽度小于等于568px时应用以下样式 */
-@media (max-width: 568px) {
+@media (max-width: 768px) {
     .downLoadBody2{
         width: 90%;
         margin: auto;
