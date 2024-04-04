@@ -96,6 +96,9 @@ window.onload = () => {
             }else if(classifyValue == '热门游戏'){
                 classifyTitle.innerHTML = '热门游戏'
                 document.getElementById('fireClassify').style.display = 'flex'
+            }else if(classifyValue == '动漫漫画'){
+                classifyTitle.innerHTML = '动漫漫画'
+                document.getElementById('animalClassify').style.display = 'flex'
             }
             onload.style.display = 'none'
 
@@ -465,13 +468,18 @@ const searchCardAndShow = (searText)=>{
         }
     }
     let current = []
-    allCards.forEach(item=>{
-        if(item.detail.toLowerCase().includes(searText.toLowerCase())
-            || item.classify.toLowerCase().includes(searText.toLowerCase())
-        ){
-            current.push(item)
-        }
-    })
+    if(searText == '全部'){
+        current = allCards;
+    }else{
+        allCards.forEach(item=>{
+            if(item.detail.toLowerCase().includes(searText.toLowerCase())
+                || item.classify.toLowerCase().includes(searText.toLowerCase())
+            ){
+                current.push(item)
+            }
+        })
+    }
+    
     currentClassifyCards = current
     // 计算总页数
     totalPages = Math.ceil(currentClassifyCards.length / perPageNum);

@@ -18,6 +18,7 @@
 }
 .myICOBar{
     height: 100%;
+    width: 200px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -26,8 +27,13 @@
     transform: translateX(-50%);
 }
 .myICO{
-    height: 70%;
-    width: auto;
+    width: 200px;
+    height: 60px;
+    margin: auto;
+    background-image: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/bzxmIcon_pink.gif?inline=false');
+    background-position: center;
+    background-size: 90%;
+    background-repeat: no-repeat;
     pointer-events: none;
 }
 .nav_search{
@@ -252,5 +258,9 @@
     }
     .menuOption:hover{
         background-color: #aaa;
+    }
+
+    .myICO{
+        background-image: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/bzxmIcon_light.gif?inline=false');
     }
 }

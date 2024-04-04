@@ -39,13 +39,13 @@ menuMask.addEventListener('click',() => {
 
 // 点击主页图标跳转首页
 homeICO.addEventListener('click',() => {
-    toHome('全部')
+    toHome()
 })
 
 
 // 点击菜单栏 homeBtn
 homeBtn.addEventListener('click',() => {
-    toHome('全部')
+    toHome()
 })
 
 // 点击菜单栏 精品游戏
@@ -59,10 +59,22 @@ pcGame.addEventListener("click",() => {
     window.location.href = ref
 })
 
+// 点击菜单栏 动漫漫画
+animal.addEventListener("click",() => {
+    let ref = '../../html/classify.html?classify=动漫漫画'
+    window.location.href = ref
+})
+
+// 点击菜单栏 小说图文
+novel.addEventListener("click",() => {
+    let ref = '../../html/classify.html?classify=小说图文'
+    window.location.href = ref
+})
+
 
 // 跳转主页 携带参数：classify
-const toHome = (classify) => {
-    let ref = '../../index.html?classify='+classify
+const toHome = () => {
+    let ref = '../../index.html';
     window.location.href = ref
 }
 
