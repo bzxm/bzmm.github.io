@@ -17,10 +17,42 @@ const searchText = document.getElementById('searchText')
 // 主页 分类名称 默认为：最近更新
 const showBar = document.getElementById('showBar')
 
+// 主页 最近资源
+const latestResource = document.getElementById('latestResource')
+// 主页 精品资源
+const niceResource = document.getElementById('niceResource')
+// 主页 热门资源
+const fireResource = document.getElementById('fireResource')
+// 主页 获取更多最近
+const getMoreLatest = document.getElementById('getMoreLatest')
+// 主页 获取更多精品
+const getMoreNice = document.getElementById('getMoreNice')
+// 主页 获取更多热门
+const getMorefire = document.getElementById('getMorefire')
 
-// 主页 页脚数目 默认为：最近更新
+
+// 主页 hideMain
+const hideMain = document.getElementById('hideMain')
+
+// 主页 页脚数目
 const cardsNum = document.getElementById('cardsNum')
 
+
+getMoreLatest.addEventListener('click',() => {
+    // 展示最近更新
+    hideMain.style.display = 'block'
+    latestResource.style.display = 'none'
+    niceResource.style.display = 'none'
+    fireResource.style.display = 'none'
+    // 滚动到顶部
+    container.scrollTo(0, 0);
+})
+getMoreNice.addEventListener('click',() => {
+    document.location.href = '/html/classify.html?classify=精品游戏';
+})
+getMorefire.addEventListener('click',() => {
+    document.location.href = '/html/classify.html?classify=热门游戏';
+})
 
 // 格式化日期
 function formatDate(str) {
@@ -94,13 +126,13 @@ request.onload = function () {
         showThis(getCurrentShowCards(currentPageNum))
         // 滚动到页面顶部
         container.scrollTo(0, 0);
-        onload.style.display = 'none'
+        // onload.style.display = 'none'
 
     }else{
         getCurrentClassifyCards('全部')
         showThis(getCurrentShowCards(currentPageNum))
         // 隐藏onload
-        onload.style.display = 'none'
+        // onload.style.display = 'none'
     }
     // 搜索内容
     var searchText = urlParams.get('search');
@@ -110,6 +142,7 @@ request.onload = function () {
 
     
 }
+
 
 
 const showThis = (cards) => {
@@ -464,6 +497,12 @@ const showPageBar = (toPage) => {
 
 // 搜索并展示
 const searchCardAndShow = (searText)=>{
+    // 展示最近更新
+    hideMain.style.display = 'block'
+    latestResource.style.display = 'none'
+    niceResource.style.display = 'none'
+    fireResource.style.display = 'none'
+
     showBar.innerHTML = '搜索 '+searText
     let current = []
     allCards.forEach(item=>{
@@ -508,7 +547,6 @@ searchText.addEventListener('keypress', function(event) {
         searchCardAndShowOnNewPage(searchText.value)
     }
 });
-
 
 // 点击card 事件 进入 detail 界面
 const cardClick = (card) => {

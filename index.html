@@ -1,221 +1,580 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-	<meta name="msvalidate.01" content="770039BCBB2030B8D5B564576CEE95BB" />
-	<meta name="description" content="宝藏小蛮资源库-宅男绅士的温柔乡，海量资源、劲爆内容、我们承诺永久免费！这是一个免费的为宅男、绅士提供免费游戏、小说、动漫、漫画、软件...等高质量内容的网站。">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>宝藏小蛮资源库-宅男绅士的温柔乡，海量资源、劲爆内容、我们承诺永久免费！</title>
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/loader.css">
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="msvalidate.01" content="770039BCBB2030B8D5B564576CEE95BB" />
+        <meta name="description" content="宝藏小蛮资源库-宅男绅士的温柔乡，海量资源、劲爆内容、我们承诺永久免费！这是一个免费的为宅男、绅士提供免费游戏、小说、动漫、漫画、软件...等高质量内容的网站。">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>宝藏小蛮资源库-宅男绅士的温柔乡，海量资源、劲爆内容、我们承诺永久免费！</title>
+        <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" href="./css/loader.css">
+        
+        <link rel="stylesheet" href="./component/navRow/navRow.css">
+        <link rel="stylesheet" href="./component/slider/slider.css">
     
-    <link rel="stylesheet" href="./component/navRow/navRow.css">
-    <link rel="stylesheet" href="./component/slider/slider.css">
+        <!-- 设置网页图标 -->
+        <link rel="icon" type="image/x-icon" href="https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/favion_32.ico?inline=false">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/favion_32.png?inline=false">
+        <link rel="icon" type="image/png" sizes="64x64" href="https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/favion_64.png?inline=false">
+        <!-- 设置苹果设备图标 -->
+        <link rel="apple-touch-icon" href="https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/favion_32.png?inline=false">
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+        </script>
+    
+    </head>
+    <body>
+        <div class="navRow">
+            <!-- 菜单条 -->
+            <div class="menuBar" id="menuBar"></div>
+            <!-- 页面标签条 -->
+            <div id="homeICO" class="myICOBar">
+                <div class="myICO"></div>
+                <!-- <img src="https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/bzxmIcon_pink.gif?inline=false" alt="点击返回主页" class="myICO"> -->
+            </div>
+            <!-- 搜索按钮 -->
+            <div class="nav_search" id="nav_search"></div>
+            <!-- 搜索弹出框 -->
+            <div id="searchMask">
+                <div id="searchToast">
+                    <div class="toastTitle">搜索</div>
+                    <input type="text" class="toastInput" id="toastInput" placeholder="搜索你的钟爱">
+                    <div class="toastBtn" id="toastBtn"></div>
+                    <!-- 关闭按钮 -->
+                    <div class="toastClose" id="toastClose"></div>
+                </div>
+            </div>
+            <!-- 添加一个透明遮罩 -->
+            <div id="menuMask"></div>
+            <div class="menuSelect" id="menuSelect">
+                <div class="menuOption" id="homeBtn">首页</div>
+                <div class="menuOption" id="niceGame">精品游戏</div>
+                <div class="menuOption" id="pcGame">热门游戏</div>          
+                <div class="menuOption" id="animal">动漫漫画</div>
+                <div class="menuOption" id="novel">小说图文</div>
+            </div>
+        </div>
+    
+        <div class="navBottom" id="navBottom">
+            <div class="navBottomBar">
+                <div class="navBottomBarItem" id="navBottomHomeBar">
+                   <div class="nBBIIcon" style="background-image: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/%E9%A6%96%E9%A1%B5.png?inline=false');"></div> 
+                   <div class="nBBIText">主页</div> 
+                </div>
+                <div class="navBottomBarItem" id="navBottomRandBar">
+                   <div class="nBBIIcon" style="background-image: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/%E9%9A%8F%E6%9C%BA.png?inline=false');"></div> 
+                   <div class="nBBIText">发现</div> 
+                </div>
+            </div>
+        </div>
+    
+    
+        <!-- 加载前展示 -->
+        <div id="onload">
+            <div id="load">
+                <div class="loader"></div>
+                <div class="shadow"></div>
+            </div>
+            <div id="load_text">加载中</div>
+        </div>
+    
+        <h1>宝藏小蛮资源库-宅男绅士的温柔乡，海量资源、劲爆内容、我们承诺永久免费！</h1>
+        <div id="container" class="container">
+            <div class="block"></div>
+            <div class="top">
+                <div class="head">
+                    <img class="head_img" src="https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/ico.png?inline=false" alt="该图片已被地外生物侵略...">
+                </div>
+                <div class="search_div">
+                    <input id="searchText" type="text" placeholder="搜索你的钟爱">
+                    <div id="search_btn">
+                        <img id="search_icon" src="https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/search.png?inline=false" alt="搜索">
+                    </div>
+                </div>
+                <!-- 搜索提示词 -->
+                <div class="searchTagList">
+                    <div class="tagTitle">热门搜索 :</div>
+                    <div class="searchTag">安卓</div>
+                    <div class="searchTag">僵尸</div>
+                    <div class="searchTag">巫师3</div>
+                    <div class="searchTag">辐射4</div>
+                    <div class="searchTag">亚洲之子</div>
+                    <div class="searchTag">堕落</div>
+                    <div class="searchTag">家族崩坏</div>
+                    <div class="searchTag">甜心选择2</div>
+                    <div class="searchTag">纳迪亚</div>
+                    <div class="searchTag">创世秩序</div>
+                    <div class="searchTag">欲望</div>
+                    <div class="searchTag">3d</div>
+                    <div class="searchTag">真人</div>
+                    <div class="searchTag">GTA</div>
+                </div>
+            </div>
+    
+    
+            <div class="noticeCards">
+                <a class="noticeCard" href="./html/常见问题.html">
+                    <div class="noticeIcon_question"></div>
+                    <h3 class="noticeText">常见问题+解决办法</h3>
+                </a>
+                <a class="noticeCard" href="./html/classify.html?classify=精品游戏">
+                    <div class="noticeIcon_fire"></div>
+                    <h3 class="noticeText">火爆绅士游戏</h3>
+                </a>
+                <a class="noticeCard" href="https://docs.qq.com/form/page/DSm5YYmxyekZxUGtP">
+                    <div class="noticeIcon_fire"></div>
+                    <h3 class="noticeText">找不到你要的游戏?点我反馈!</h3>
+                </a>
+            </div>
+            
+            <div class="slider-container" style="border-radius: 8px;">
+                <div class="slider" id="main-slider">
+                    <div class="slides">
+                        <a class="slide" href="/articles/热门游戏/9zUlnWgTow.html" style="background-image: url('https://img2.imgtp.com/2024/04/02/4pqLXK2k.png');">
+                            <div class="slide-content">上古卷轴5超绅士魔改版</div>
+                        </a>
+                        <a class="slide" href="/articles/热门游戏/Z5Z90aSh6p.html" style="background-image: url('https://heistbeer.com/d%2Ffile%2Fp%2F2020-09-05%2F15992610415.jpg');">
+                            <div class="slide-content">巫师3绅士魔改版</div>
+                        </a>
+                        <a class="slide" href="/articles/热门游戏/YbBtHmeGn7.html" style="background-image: url('https://heistbeer.com/d/file/2019-11-08/4618bbbbf9d05f96e9c427f5ba64fef4.png');">
+                            <div class="slide-content">辐射4 绅士H实验室</div>
+                        </a>
+                        <a class="slide" href="/articles/热门游戏/EUG4CGVtF8.html" style="background-image: url('https://img.alicdn.com/imgextra/i2/688103271/O1CN01BaUorO1a2AHbJaHm8_!!688103271.png');">
+                            <div class="slide-content">VAM超多国漫人物整合版</div>
+                        </a>
+                        <a class="slide" href="/articles/精品游戏/juqm8BndSJ.html" style="background-image: url('https://www.pcgameres.com/upload/portal/20210921/5f9999495d9127cafc6b68eaa10d63d9.jpg');">
+                            <div class="slide-content">家族崩坏V24</div>
+                        </a>
+                        <a class="slide" href="/articles/精品游戏/gew2MuGk5J.html" style="background-image: url('https://mcy567.com/wp-content/uploads/2023/07/Snipaste_2023-07-16_16-49-04.jpg');">
+                            <div class="slide-content">亚洲之子</div>
+                        </a>
+                        <a class="slide" href="/articles/精品游戏/nShN4DSumu.html" style="background-image: url('https://www.pcgameres.com/upload/portal/20220408/c448d1ec3a3d68993fe3bfb124faaafd.jpg');">
+                            <div class="slide-content">纳迪亚之宝</div>
+                        </a>
+                        <a class="slide" href="/articles/精品游戏/i3pr9rrcGd.html" style="background-image: url('https://s2.loli.net/2022/06/12/FgQI6XxtvGL9UyT.jpg');">
+                            <div class="slide-content">创世秩序</div>
+                        </a>
+                        <a class="slide" href="/articles/精品游戏/3rOuKf6I1e.html" style="background-image: url('https://www.llsl.pro/i/2023/09/29/6516bc9971a48.jpg');">
+                            <div class="slide-content">凤凰</div>
+                        </a>
+                    </div>
+                </div>
+              
+                <div class="slideNav">
+                  <span class="slideDot"></span>
+                  <span class="slideDot"></span>
+                  <span class="slideDot"></span>
+                  <span class="slideDot"></span>
+                  <span class="slideDot"></span>
+                  <span class="slideDot"></span>
+                  <span class="slideDot"></span>
+                  <span class="slideDot"></span>
+                  <span class="slideDot"></span>
+                </div>
+            </div>
+    
+    
+            <div class="Resource" id="latestResource">
+                <div class="homeClassifyRow">
+                    <div class="homeClassifyTitle">最新资源</div>
+                    <div class="homeClassifyBottom"></div>
+                </div>
+                <div class="cardList" id="latestCardList"></div>
+                <div class="homeClassifyRow">
+                    <div class="getMore" id="getMoreLatest">获取更多</div>
+                </div>
+            </div>
+    
+            <div class="Resource" id="niceResource">
+                <div class="homeClassifyRow">
+                    <div class="homeClassifyTitle">精品游戏</div>
+                    <div class="homeClassifyBottom"></div>
+                </div>
+                <div class="cardList" id="niceCardList"></div>
+                <div class="homeClassifyRow">
+                    <div class="getMore" id="getMoreNice">获取更多</div>
+                </div>
+            </div>
+    
+            <div class="Resource" id="fireResource">
+                <div class="homeClassifyRow">
+                    <div class="homeClassifyTitle">热门单机游戏</div>
+                    <div class="homeClassifyBottom"></div>
+                </div>
+                <div class="cardList" id="fireCardList"></div>
+                <div class="homeClassifyRow">
+                    <div class="getMore" id="getMorefire">获取更多</div>
+                </div>
+            </div>
+    
+    
+            <div id="hideMain">
+                <div class="searchBar">
+                    <a class="Bar" href="./html/classify.html?classify=精品游戏">精品游戏</a>
+                    <div class="bar" id="showBar">最新更新</div>
+                    <a class="Bar" href="./html/classify.html?classify=热门游戏">热门游戏</a>
+                </div>
+                
+                <!-- 这里放所有card -->
+                <div class="cardList" id="cardList"></div>
+                <!-- 分页条 -->
+                <div class="pageBar" id="pageBar">
+                    <div class="pageItem" id="upPage">上一页</div>
+                    <div class="pageItem pageItemActive">1</div>
+                    <div class="pageItem">2</div>
+                    <div class="pageItem">3</div>
+                    <div class="pageItem">4</div>
+                    <div class="pageItem">5</div>
+                    <div class="pageItem">...</div>
+                    <div class="pageItem">22</div>
+                    <div class="pageItem" id="downPage">下一页</div>
+                    <input id="pageInput" placeholder="页码">
+                    <div id="toPageBtn">跳转</div>
+                </div>
+            </div>
+    
+            <div class="tailer">
+                <div class="tailerRow">
+                    本站总访问量<span id="busuanzi_value_site_uv"></span>次
+                </div>
+                <div class="tailerRow">
+                    防失联请关注微信公众号：<span style="color: rgb(253, 202, 120);">宝藏小蛮</span>
+                </div>
+                <div class="tailerRow">
+                    目前已包含：<span id="cardsNum" style="color: rgb(253, 202, 120);"></span> 个内容
+                </div>
+            </div>
+        </div>
+    
+    
+    </body>
+    
+    <script src="./component/navRow/navRow.js"></script>
+    <script src="./component/slider/slider.js"></script>
+    <script src="./js/clickEff.js"></script>
+    <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool/disable-devtool.min.js'></script>
+    <script src="./js/index.js"></script>
+    
+    <script>
+        const latestCardList = document.getElementById('latestCardList');
+        const niceCardList = document.getElementById('niceCardList');
+        const fireCardList = document.getElementById('fireCardList');
+    
+        // 添加最近
+        let latestCards = [{"id":"0xZ1gN7Nmx","detail":"生命体 ver0.17 浏览器汉化版 动态HTML游戏 13G","classify":"精品游戏|神级大作|真人互动","time":"1712280620626","cover":"https://img2.imgtp.com/2024/04/04/3jGvlBW0.jpg"},{"id":"zjH2S3tjfv","detail":"悲伤的天堂 ver0.9.9 汉化版 PC+安卓 SLG游戏&更新 3.4G","classify":"精品游戏|3D艺术|神级大作|SLG游戏|欧美风","time":"1712280615630","cover":"https://img2.imgtp.com/2024/04/04/5Ga01DOG.jpg"},{"id":"rKDIs8s1FJ","detail":"触手:Tentacular R4 v5.0 汉化完结版 增加触手哥超进化 全CV奇葩沙盒游戏","classify":"精品游戏|3D艺术|神级大作|SLG游戏|欧美风","time":"1712280609493","cover":"https://img2.imgtp.com/2024/04/04/y9HxCjJF.jpg"},{"id":"hDgWIRku6Z","detail":"我的继亲(My step family) Ch.1 官方中文版 PC+安卓 动态SLG游戏 3G","classify":"精品游戏|3D艺术|神级大作|亚洲风|韩系|SLG游戏","time":"1712280605596","cover":"https://img2.imgtp.com/2024/04/05/pVNKtXBH.jpg"},{"id":"fL6PhQnOEL","detail":"恶灵寄生(Parasite Evil) ver3.03 DL官方中文正式版 动作解谜游戏 1.6G","classify":"精品游戏|二次元风|步兵|解谜","time":"1712280601599","cover":"https://img2.imgtp.com/2024/04/05/bt26TxH2.jpg"},{"id":"bPCTIGPlzQ","detail":"激情之风(Breeze of Passion) ver0.5.01 官方中文版 沙盒SLG游戏 3.7G","classify":"精品游戏|3D艺术|神级大作|欧美风|SLG游戏","time":"1712280596321","cover":"https://img2.imgtp.com/2024/04/05/vTJsIlDD.jpg"},{"id":"BR6QhU4fBO","detail":"绑定:扭结约会|临时契约(Bindr Kink Dating) ver0.1.9 汉化版 PC+安卓 沙盒SLG游戏 2.8G","classify":"精品游戏|3D艺术|SLG游戏","time":"1712280593609","cover":"https://img2.imgtp.com/2024/04/05/27952K5N.jpg"},{"id":"qnRqYLNs3f","detail":"治愈我的性瘾:Cure My Addiction CH5.EP1 汉化版 PC+安卓 沙盒SLG游戏 2.5GB","classify":"精品游戏|3D艺术|SLG游戏|欧美风","time":"1712280588080","cover":"https://img2.imgtp.com/2024/04/04/DN5IH80C.jpg"},{"id":"WPmjzZKLO3","detail":"交替存在(Alternate Existence) Ver1.7 汉化版 PC+安卓 SLG新作 4.8G","classify":"精品游戏|3D艺术|神级大作|SLG游戏|欧美风","time":"1712280583800","cover":"https://img2.imgtp.com/2024/04/04/ug15pmHj.jpg"},{"id":"sz7MhPJ50a","detail":"拜访 Ver1.0 精翻汉化最终完结版 PC+安卓+全CG 6G","classify":"精品游戏|3D艺术|神级大作|欧美风|SLG游戏","time":"1712189940424","cover":"https://img2.imgtp.com/2024/04/04/axWEm5RV.png"},{"id":"tCtHf9T4k3","detail":"果体学校 ver0.12.1 汉化版 PC+安卓 动态SLG游戏&更新 2.6G","classify":"精品游戏|3D艺术|神级大作|SLG游戏|欧美风","time":"1712186838663","cover":"https://img2.imgtp.com/2024/04/04/OuFqY2iz.jpg"},{"id":"FDTBxQftCN","detail":"美德(V.I.R.T.U.E.S.) ver1-17 官方中文版+10部外传 SLG游戏神作 8.5G","classify":"精品游戏|3D艺术|神级大作|SLG游戏|亚洲风","time":"1712186175576","cover":"https://img2.imgtp.com/2024/04/03/5ptXZtgL.jpg"},{"id":"XYaqh6YKNc","detail":"400+安卓破解软件 含绅士软件、宅男神器、资源嗅探、下载神器、看片神器、全网小说、全网漫画、黑科技软件破解版、AI工具破解版......","classify":"软件专区|安卓软件|破解软件|合集","time":"1712186170750","cover":"https://img2.imgtp.com/2024/04/04/Z79RUJt0.jpg"},{"id":"5wrAlR8zT2","detail":"非分之想(Thirsty for My Guest) EP1-EP16 全16章精翻汉化版 PC+安卓+全CG 7G","classify":"精品游戏|3D艺术|神级大作|欧美风|SLG游戏","time":"1712186166483","cover":"https://img2.imgtp.com/2024/04/03/GdPFN6ry.jpg"},{"id":"EgSsmd7jyd","detail":"我的新生活重置(My New Lief) ver0.92 精翻汉化版+全CG RPG游戏 7.6G","classify":"精品游戏|3D艺术|神级大作|欧美风|RPG游戏","time":"1712186160383","cover":"https://img2.imgtp.com/2024/04/04/zw3e33Tw.jpg"},{"id":"qsdXQMaRRq","detail":"地下城的女骑士 DL官方中文解码版 3D动作冒险游戏 1.9G","classify":"精品游戏|3D艺术|自由沙盒","time":"1712186146342","cover":"https://img2.imgtp.com/2024/04/03/BZCVnsW6.jpg"},{"id":"9zUlnWgTow","detail":"上古卷轴5/老滚5/少女卷轴5 大佬5X周年重制魔改版！超级重制绅士魔改版+绅士爱的实验室［实验室+人物mod存档/超美人物］［赠送其他版本：200GMM整合版本+136G版本+淘宝300元67G浓缩版+天际纯净版］","classify":"热门游戏|高画质|高自由度|3A大作|动作冒险|捏人|绅士魔改","time":"1712099287710","cover":"https://img2.imgtp.com/2024/04/02/xknrn60f.jpg"},{"id":"y4ghiH8MiU","detail":"农民的追求 Ver3.01 精翻汉化版 PC+安卓 RPG游戏&神作更新 未压缩高清动图6.8G","classify":"精品游戏|3D艺术|神级大作|欧美风|步兵|RPG游戏","time":"1712099282547","cover":"https://img2.imgtp.com/2024/04/02/IeXfXq8o.jpg"},{"id":"BwzfHmW4Gs","detail":"双重感知(Double Perception) ver3.7 汉化版 PC+安卓 沙盒SLG游戏 3.6G","classify":"精品游戏|3D艺术|SLG游戏|欧美风","time":"1712099276893","cover":"https://img2.imgtp.com/2024/04/02/nz5ICbXg.jpg"},{"id":"GN9eKwqlZq","detail":"都要！小孩子才做选择！中文语音版 真人影像互动游戏 30G","classify":"热门游戏|真人互动|中文语音","time":"1712099272162","cover":"https://img2.imgtp.com/2024/04/02/OnOzeL57.jpg"}];
+        latestCards.forEach((card,index)=>{
+            var card1 = document.createElement('div');
+            card1.className = 'card';
+            card1.addEventListener('click',() => {
+                cardClick(card);
+            });
+            var cover = document.createElement('div');
+            cover.className = 'cover';
+            var cover_img = document.createElement('img');
+            cover_img.src = card.cover;
+            cover_img.alt = card.detail+"   该图片过于刺激🔞无法展示...";
+            cover_img.className = 'cover_img';
+            cover_img.addEventListener('load',() => {
+                document.getElementById('cover_load_a'+index).style.display = 'none';
+            });
+            cover_img.addEventListener('error',() => {
+                document.getElementById('cover_load_a'+index).style.display = 'none';
+            })
+            cover.appendChild(cover_img);
+            var cover_load = document.createElement('div');
+            cover_load.className = 'cover_load';
+            cover_load.id = 'cover_load_a'+index;
+            cover.appendChild(cover_load);
+            var msg = document.createElement('div');
+            msg.className = 'msg';
+            var flag = document.createElement('div');
+            flag.className = 'flag';
+            if(formatDate((new Date()).getTime()) == formatDate(card.time)){
+                var cardConfig = document.createElement('span');
+                cardConfig.className = 'cardConfig';
+                cardConfig.innerHTML = '今日更新';
+                flag.appendChild(cardConfig);
+            }
+            var classifies = card.classify.split('|');
+            var cardConfig = document.createElement('span');
+            cardConfig.className = 'cardConfigPink';
+            cardConfig.innerHTML = classifies[0];
+            cardConfig.addEventListener('click',(e) => {
+                searchCardAndShowOnNewPage(classifies[0]);
+                e.stopPropagation();
+            });
+            flag.appendChild(cardConfig);
+    
+            if(card.classify.includes('神级大作')){
+                var cardConfig = document.createElement('span');
+                cardConfig.className = 'cardConfigFire';
+                cardConfig.innerHTML = '神级大作';
+                cardConfig.addEventListener('click',(e) => {
+                    searchCardAndShowOnNewPage('神级大作');
+                    e.stopPropagation();
+                });
+                flag.appendChild(cardConfig);
+            }
+    
+            if(classifies.length >= 1){
+                for(let i = 1; i < classifies.length; i++){
+                    if(classifies[i] == '神级大作') continue;
+                    var cardConfig = document.createElement('span');
+                    cardConfig.className = 'cardConfigGreen';
+                    cardConfig.innerHTML = classifies[i];
+                    cardConfig.addEventListener('click',(e) => {
+                        searchCardAndShowOnNewPage(classifies[i]);
+                        e.stopPropagation();
+                    })
+                    flag.appendChild(cardConfig);
+                }
+            }
+            var cTitle = document.createElement('a');
+            cTitle.className = 'cTitle';
+            let ref = '';
+            if(card.classify.includes('精品游戏')){
+                ref = '../articles/精品游戏/'+card.id+'.html';
+            }else if(card.classify.includes('热门游戏')){
+                ref = '../articles/热门游戏/'+card.id+'.html';
+            }else if(card.classify.includes('动漫漫画')){
+                ref = '../articles/动漫漫画/'+card.id+'.html';
+            }else if(card.classify.includes('小说图文')){
+                ref = '../articles/小说图文/'+card.id+'.html';
+            }else if(card.classify.includes('软件专区')){
+                ref = '../articles/软件专区/'+card.id+'.html';
+            }else{
+                ref = '../articles/'+card.id+'.html';
+            }
+            cTitle.href = ref;
+            cTitle.innerHTML = card.detail;
+    
+            var cTitleH = document.createElement('h2');
+            cTitleH.className = 'cTitle';
+            cTitleH.appendChild(cTitle);
+            msg.appendChild(flag);
+            msg.appendChild(cTitleH);
+            card1.appendChild(cover);
+            card1.appendChild(msg);
+            latestCardList.appendChild(card1)
+        })
+    
+        // 添加精品
+        let niceCards = [{"id":"LOEh6STA2G","detail":"家务 House Chores Ver0.8.2 汉化版 僵尸生活作者新作 PC+安卓 手绘SLG游戏 1.6G","classify":"精品游戏|二次元风|神级大作|RPG游戏","time":"1711406584729","cover":"https://img2.imgtp.com/2024/03/25/tlmD4g1Z.jpg"},{"id":"RQis2LAX3d","detail":"二次元老婆学院 ver1.1.0 高压汉化版 PC+安卓 SLG游戏神作 2.6G","classify":"精品游戏|3D艺术|神级大作|SLG游戏","time":"1711927231711","cover":"https://img2.imgtp.com/2024/03/31/fAPeUMB7.jpg"},{"id":"tCtHf9T4k3","detail":"果体学校 ver0.12.1 汉化版 PC+安卓 动态SLG游戏&更新 2.6G","classify":"精品游戏|3D艺术|神级大作|SLG游戏|欧美风","time":"1712186838663","cover":"https://img2.imgtp.com/2024/04/04/OuFqY2iz.jpg"},{"id":"hDgWIRku6Z","detail":"我的继亲(My step family) Ch.1 官方中文版 PC+安卓 动态SLG游戏 3G","classify":"精品游戏|3D艺术|神级大作|亚洲风|韩系|SLG游戏","time":"1712280605596","cover":"https://img2.imgtp.com/2024/04/05/pVNKtXBH.jpg"},{"id":"gxCwrQ7GXg","detail":"美德(V.I.R.T.U.E.S.) ver17 官方中文独立版 PC+安卓 SLG游戏&神作终章","classify":"精品游戏|3D艺术|神级大作","time":"1710334940126","cover":"https://heistbeer.com/d%2Ffile%2Fp%2F2023-02-21%2F16769455474.jpg"},{"id":"EgSsmd7jyd","detail":"我的新生活重置(My New Lief) ver0.92 精翻汉化版+全CG RPG游戏 7.6G","classify":"精品游戏|3D艺术|神级大作|欧美风|RPG游戏","time":"1712186160383","cover":"https://img2.imgtp.com/2024/04/04/zw3e33Tw.jpg"},{"id":"n0KnLeOwQN","detail":"朋友游戏 官方中文版 梅麻吕新作&3D游戏 3.1G","classify":"精品游戏|3D艺术|神级大作|梅麻吕|亚洲风","time":"1709258616375","cover":"https://www.iseacg.com/wp-content/uploads/2024/03/dfilep2024-02-2917091978868.jpg"},{"id":"JG4fK7oK2i","detail":"性感机器人(Sexbot) ver1.4 汉化版 PC+安卓 动态SLG游戏 3.8G","classify":"精品游戏|3D艺术|神级大作|SLG游戏","time":"1710977010907","cover":"https://mcy567.com/wp-content/uploads/2022/10/1_03b3.jpg"},{"id":"vlUe9oqW5V","detail":"启示录(Apocalust) ver0.07 汉化版 PC+安卓 动态SLG游戏 3.1G","classify":"精品游戏|3D艺术|神级大作|SLG游戏","time":"1711151944037","cover":"https://mcy567.com/wp-content/uploads/2021/02/QQ截图20220327170524-e1653057665343.jpg"},{"id":"DQbsSITQMq","detail":"欲望之梦 1-12章 精修完结中文汉化版+攻略+存档","classify":"精品游戏|3D艺术|神级大作|欧美风|SLG游戏","time":"1712012657471","cover":"https://img2.imgtp.com/2024/04/01/ird2RmtC.jpg"},{"id":"zs7I1pphtE","detail":"甜蜜的复仇(Sweet Revenge) ver0.08 汉化版 PC+安卓 动态SLG游戏 2.4G","classify":"精品游戏|3D艺术","time":"1710160597614","cover":"http://heistbeer.com/d/file/p/2022-10-23/166648688100090.jpg"},{"id":"LWXnZ7ojhj","detail":"一分钱一分货(In for a Penny) ver0.47 汉化版 PC+安卓 动态SLG游戏 3.8G","classify":"精品游戏|3D艺术|神级大作|SLG游戏|后宫","time":"1711581009951","cover":"https://7899abc.com/wp-content/uploads/2022/07/D5-122.jpg"},{"id":"kn96mPKu9A","detail":"双剑物语 ver2.0 汉化作弊版 RPG游戏+CG回想全开+无敌存档 500M","classify":"精品游戏|二次元风","time":"1709959985058","cover":"http://heistbeer.com/d%2Ffile%2Fp%2F2024-03-08%2F17098708777.jpg"},{"id":"XCv2a0ZmGo","detail":"猎魔人物语 ver0.65 官方中文作弊版 PC+安卓 卡牌战斗SLG游戏 1.8G","classify":"精品游戏|二次元风","time":"1709690616375","cover":"http://heistbeer.com/d/file/p/2021-9-23/163235930500007.jpg"},{"id":"Hi0mwmH6AQ","detail":"黄毛漂流记 ver1.1.0.2 官方中文版 经营模拟游戏 500M","classify":"精品游戏|二次元风|SLG游戏","time":"1710947803707","cover":"https://heistbeer.com/d%2Ffile%2Fp%2F2024-02-20%2F170841197810.jpg"},{"id":"cI303pI1mt","detail":"胡闹(Monkey Business) ver1.0 汉化完结版 全家桶SLG游戏 4.5G","classify":"精品游戏|3D艺术","time":"1710234435960","cover":"https://heistbeer.com/d%2Ffile%2Fp%2F2024-03-11%2F17101513719.jpg"},{"id":"3W0DL4DD7B","detail":"苦难时期(艰难时期 Straitened Times) ver0.48.1 汉化版 PC+安卓 沙盒SLG游戏 2.4G","classify":"精品游戏|3D艺术|SLG游戏","time":"1711927225905","cover":"https://img2.imgtp.com/2024/03/31/A1p1ethm.jpg"},{"id":"6eSQuYBqhN","detail":"掌控全局(Cybernetic Seduction) Ep.4 汉化版 PC+安卓 动态SLG游戏","classify":"精品游戏|3D艺术","time":"1710160164956","cover":"http://heistbeer.com/d%2Ffile%2Fp%2F2022-12-16%2F16711576682.png"},{"id":"sOrMESDQsv","detail":"堕落玩偶：爱欲行动 Ver0.4.9 steam中文破解版&可玩后宫模式 神作 10G","classify":"精品游戏|3D艺术|神级大作","time":"1710638757910","cover":"https://heistbeer.com/d/file/2022-02-21/32bcafda88efa6fa2e3e0ab337f0afbe.jpg"},{"id":"bPCTIGPlzQ","detail":"激情之风(Breeze of Passion) ver0.5.01 官方中文版 沙盒SLG游戏 3.7G","classify":"精品游戏|3D艺术|神级大作|欧美风|SLG游戏","time":"1712280596321","cover":"https://img2.imgtp.com/2024/04/05/vTJsIlDD.jpg"}];
+        niceCards.forEach((card,index)=>{
+           var card1 = document.createElement('div');
+            card1.className = 'card';
+            card1.addEventListener('click',() => {
+                cardClick(card);
+            });
+            var cover = document.createElement('div');
+            cover.className = 'cover';
+            var cover_img = document.createElement('img');
+            cover_img.src = card.cover;
+            cover_img.alt = card.detail+"   该图片过于刺激🔞无法展示...";
+            cover_img.className = 'cover_img';
+            cover_img.addEventListener('load',() => {
+                document.getElementById('cover_load_b'+index).style.display = 'none';
+            });
+            cover_img.addEventListener('error',() => {
+                document.getElementById('cover_load_b'+index).style.display = 'none';
+            })
+            cover.appendChild(cover_img);
+            var cover_load = document.createElement('div');
+            cover_load.className = 'cover_load';
+            cover_load.id = 'cover_load_b'+index;
+            cover.appendChild(cover_load);
+            var msg = document.createElement('div');
+            msg.className = 'msg';
+            var flag = document.createElement('div');
+            flag.className = 'flag';
+            if(formatDate((new Date()).getTime()) == formatDate(card.time)){
+                var cardConfig = document.createElement('span');
+                cardConfig.className = 'cardConfig';
+                cardConfig.innerHTML = '今日更新';
+                flag.appendChild(cardConfig);
+            }
+            var classifies = card.classify.split('|');
+            var cardConfig = document.createElement('span');
+            cardConfig.className = 'cardConfigPink';
+            cardConfig.innerHTML = classifies[0];
+            cardConfig.addEventListener('click',(e) => {
+                searchCardAndShowOnNewPage(classifies[0]);
+                e.stopPropagation();
+            });
+            flag.appendChild(cardConfig);
+    
+            if(card.classify.includes('神级大作')){
+                var cardConfig = document.createElement('span');
+                cardConfig.className = 'cardConfigFire';
+                cardConfig.innerHTML = '神级大作';
+                cardConfig.addEventListener('click',(e) => {
+                    searchCardAndShowOnNewPage('神级大作');
+                    e.stopPropagation();
+                });
+                flag.appendChild(cardConfig);
+            }
+    
+            if(classifies.length >= 1){
+                for(let i = 1; i < classifies.length; i++){
+                    if(classifies[i] == '神级大作') continue;
+                    var cardConfig = document.createElement('span');
+                    cardConfig.className = 'cardConfigGreen';
+                    cardConfig.innerHTML = classifies[i];
+                    cardConfig.addEventListener('click',(e) => {
+                        searchCardAndShowOnNewPage(classifies[i]);
+                        e.stopPropagation();
+                    })
+                    flag.appendChild(cardConfig);
+                }
+            }
+    
+            
+    
+            var cTitle = document.createElement('a');
+            cTitle.className = 'cTitle';
+            let ref = '';
+            if(card.classify.includes('精品游戏')){
+                ref = '../articles/精品游戏/'+card.id+'.html';
+            }else if(card.classify.includes('热门游戏')){
+                ref = '../articles/热门游戏/'+card.id+'.html';
+            }else if(card.classify.includes('动漫漫画')){
+                ref = '../articles/动漫漫画/'+card.id+'.html';
+            }else if(card.classify.includes('小说图文')){
+                ref = '../articles/小说图文/'+card.id+'.html';
+            }else if(card.classify.includes('软件专区')){
+                ref = '../articles/软件专区/'+card.id+'.html';
+            }else{
+                ref = '../articles/'+card.id+'.html';
+            }
+            cTitle.href = ref;
+            cTitle.innerHTML = card.detail;
+    
+            var cTitleH = document.createElement('h2');
+            cTitleH.className = 'cTitle';
+            cTitleH.appendChild(cTitle);
+            msg.appendChild(flag);
+            msg.appendChild(cTitleH);
+            card1.appendChild(cover);
+            card1.appendChild(msg);
+            niceCardList.appendChild(card1);
+        })
+    
+        // 添加热门
+        let fireCards = [{"id":"scqrbLXTWO","detail":"侠盗飞车5| Gta5 1.41 国风整合 183位超级英雄600辆豪车内置4种修改器 简体中文版 独家资源","classify":"热门游戏|高画质|高自由度|3A大作","time":"1710334126728","cover":"https://www.ign.com.cn/sm/t/ign_cn/photo/9/99-details/99-details-from-the-gta-6-trailer_ngkk.3840.jpg"},{"id":"UqckPfvSj5","detail":"博德之门3 v4.1.1.4900808|豪华中文正式版整合全DLC RPG神作 支持键盘.鼠标|赠多项修改器 142G","classify":"热门游戏|3A大作|角色扮演|奇幻","time":"1710890540376","cover":"https://d.tb5.cc/231202/1-231202152541315.jpg"},{"id":"8ANGgrSfwV","detail":"尼尔：机械纪元 豪华中文版送修改器 动作冒险游戏","classify":"热门游戏|高自由度|高画质|3A大作|动作冒险|女性主角","time":"1710890511085","cover":"https://img.downkuai.com/uppic/20210325/c83af7c50091cc568e7281821a866df0.jpg"},{"id":"9zUlnWgTow","detail":"上古卷轴5/老滚5/少女卷轴5 大佬5X周年重制魔改版！超级重制绅士魔改版+绅士爱的实验室［实验室+人物mod存档/超美人物］［赠送其他版本：200GMM整合版本+136G版本+淘宝300元67G浓缩版+天际纯净版］","classify":"热门游戏|高画质|高自由度|3A大作|动作冒险|捏人|绅士魔改","time":"1712099287710","cover":"https://img2.imgtp.com/2024/04/02/xknrn60f.jpg"},{"id":"24saPrFWEn","detail":"星露谷物语 V1.6.2 超邪恶R18魔改中文版 精品游戏神奇魔改","classify":"热门游戏|高自由度|沙盒|角色扮演|生活模拟|2D|像素风","time":"1711151939197","cover":"https://heistbeer.com/d%2Ffile%2Fp%2F2020-09-02%2F15990187839.png"},{"id":"YbBtHmeGn7","detail":"辐射4H实验室：在辐射世界！你依然绅士 V2.0 整合中文版","classify":"热门游戏|高画质|高自由度|3A大作|动作冒险|枪战射击|绅士魔改","time":"1710519265470","cover":"https://heistbeer.com/d/file/2019-11-08/4618bbbbf9d05f96e9c427f5ba64fef4.png"},{"id":"Z5Z90aSh6p","detail":"巫师3：狂嫖！绅士邪恶魔改版★解压即玩小白福音 魔改3A","classify":"热门游戏|高画质|高自由度|3A大作|动作冒险|角色扮演|绅士魔改","time":"1710519268700","cover":"https://img2.imgtp.com/2024/03/26/kJ4fVz9Q.jpg"},{"id":"EUG4CGVtF8","detail":"Virt A mate(VAM)虚拟实境世界 ver1.95 小蛮宝豪华整合版 含超多国漫人物+自带联网Hub 120G+","classify":"热门游戏|高画质|高自由度|大型游戏|捏人","time":"1711839275605","cover":"https://img.alicdn.com/imgextra/i2/688103271/O1CN01BaUorO1a2AHbJaHm8_!!688103271.png"},{"id":"0HZLzI8ERm","detail":"别跑!美女在追你! STEAM官方中文版 沉浸式真实互动影像游戏 2.9G","classify":"热门游戏|真人互动","time":"1711839222015","cover":"https://img2.imgtp.com/2024/03/29/HsZLf2HJ.jpg"},{"id":"t3WzJ0GhPQ","detail":"美女:请别影响我学习 v1.0.0|官方简体中文版 真人影像互动游戏|支持键盘.鼠标.手柄 20G","classify":"热门游戏|真人互动","time":"1711927210484","cover":"https://heistbeer.com/d/file/p/2024-3-31/171183935800040.jpg"},{"id":"GN9eKwqlZq","detail":"都要！小孩子才做选择！中文语音版 真人影像互动游戏 30G","classify":"热门游戏|真人互动|中文语音","time":"1712099272162","cover":"https://img2.imgtp.com/2024/04/02/OnOzeL57.jpg"},{"id":"Z6UVXhPXUM","detail":"恋爱公寓 v1.065官方简体中文版 恋爱模拟 国产真人互动游戏","classify":"热门游戏|真人互动","time":"1710520031390","cover":"https://heistbeer.com/d/file/2019-07-25/e26b1f2a45f3fa324ecc088396539942.jpg"}];
+        fireCards.forEach((card,index)=>{
+           var card1 = document.createElement('div');
+            card1.className = 'card';
+            card1.addEventListener('click',() => {
+                cardClick(card);
+            });
+            var cover = document.createElement('div');
+            cover.className = 'cover';
+            var cover_img = document.createElement('img');
+            cover_img.src = card.cover;
+            cover_img.alt = card.detail+"   该图片过于刺激🔞无法展示...";
+            cover_img.className = 'cover_img';
+            cover_img.addEventListener('load',() => {
+                document.getElementById('cover_load_c'+index).style.display = 'none';
+            });
+            cover_img.addEventListener('error',() => {
+                document.getElementById('cover_load_c'+index).style.display = 'none';
+            })
+            cover.appendChild(cover_img);
+            var cover_load = document.createElement('div');
+            cover_load.className = 'cover_load';
+            cover_load.id = 'cover_load_c'+index;
+            cover.appendChild(cover_load);
+            var msg = document.createElement('div');
+            msg.className = 'msg';
+            var flag = document.createElement('div');
+            flag.className = 'flag';
+            if(formatDate((new Date()).getTime()) == formatDate(card.time)){
+                var cardConfig = document.createElement('span');
+                cardConfig.className = 'cardConfig';
+                cardConfig.innerHTML = '今日更新';
+                flag.appendChild(cardConfig);
+            }
+            var classifies = card.classify.split('|');
+            var cardConfig = document.createElement('span');
+            cardConfig.className = 'cardConfigPink';
+            cardConfig.innerHTML = classifies[0];
+            cardConfig.addEventListener('click',(e) => {
+                searchCardAndShowOnNewPage(classifies[0]);
+                e.stopPropagation();
+            });
+            flag.appendChild(cardConfig);
+    
+            if(card.classify.includes('神级大作')){
+                var cardConfig = document.createElement('span');
+                cardConfig.className = 'cardConfigFire';
+                cardConfig.innerHTML = '神级大作';
+                cardConfig.addEventListener('click',(e) => {
+                    searchCardAndShowOnNewPage('神级大作');
+                    e.stopPropagation();
+                });
+                flag.appendChild(cardConfig);
+            }
+    
+            if(classifies.length >= 1){
+                for(let i = 1; i < classifies.length; i++){
+                    if(classifies[i] == '神级大作') continue;
+                    var cardConfig = document.createElement('span');
+                    cardConfig.className = 'cardConfigGreen';
+                    cardConfig.innerHTML = classifies[i];
+                    cardConfig.addEventListener('click',(e) => {
+                        searchCardAndShowOnNewPage(classifies[i]);
+                        e.stopPropagation();
+                    })
+                    flag.appendChild(cardConfig);
+                }
+            }
 
-    <!-- 设置网页图标 -->
-    <link rel="icon" type="image/x-icon" href="https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/favion_32.ico?inline=false">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/favion_32.png?inline=false">
-    <link rel="icon" type="image/png" sizes="64x64" href="https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/favion_64.png?inline=false">
-    <!-- 设置苹果设备图标 -->
-    <link rel="apple-touch-icon" href="https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/favion_32.png?inline=false">
-
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+            var cTitle = document.createElement('a');
+            cTitle.className = 'cTitle';
+            let ref = '';
+            if(card.classify.includes('精品游戏')){
+                ref = '../articles/精品游戏/'+card.id+'.html';
+            }else if(card.classify.includes('热门游戏')){
+                ref = '../articles/热门游戏/'+card.id+'.html';
+            }else if(card.classify.includes('动漫漫画')){
+                ref = '../articles/动漫漫画/'+card.id+'.html';
+            }else if(card.classify.includes('小说图文')){
+                ref = '../articles/小说图文/'+card.id+'.html';
+            }else if(card.classify.includes('软件专区')){
+                ref = '../articles/软件专区/'+card.id+'.html';
+            }else{
+                ref = '../articles/'+card.id+'.html';
+            }
+            cTitle.href = ref;
+            cTitle.innerHTML = card.detail;
+    
+            var cTitleH = document.createElement('h2');
+            cTitleH.className = 'cTitle';
+            cTitleH.appendChild(cTitle);
+            msg.appendChild(flag);
+            msg.appendChild(cTitleH);
+            card1.appendChild(cover);
+            card1.appendChild(msg);
+            fireCardList.appendChild(card1);
+        })
+        onload.style.display = 'none'
     </script>
-
-</head>
-<body>
-    <div class="navRow">
-        <!-- 菜单条 -->
-        <div class="menuBar" id="menuBar"></div>
-        <!-- 页面标签条 -->
-        <div id="homeICO" class="myICOBar">
-            <div class="myICO"></div>
-            <!-- <img src="https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/bzxmIcon_pink.gif?inline=false" alt="点击返回主页" class="myICO"> -->
-        </div>
-        <!-- 搜索按钮 -->
-        <div class="nav_search" id="nav_search"></div>
-        <!-- 搜索弹出框 -->
-        <div id="searchMask">
-            <div id="searchToast">
-                <div class="toastTitle">搜索</div>
-                <input type="text" class="toastInput" id="toastInput" placeholder="搜索你的钟爱">
-                <div class="toastBtn" id="toastBtn"></div>
-                <!-- 关闭按钮 -->
-                <div class="toastClose" id="toastClose"></div>
-            </div>
-        </div>
-        <!-- 添加一个透明遮罩 -->
-        <div id="menuMask"></div>
-        <div class="menuSelect" id="menuSelect">
-            <div class="menuOption" id="homeBtn">首页</div>
-            <div class="menuOption" id="niceGame">精品游戏</div>
-            <div class="menuOption" id="pcGame">热门游戏</div>          
-            <div class="menuOption" id="animal">动漫漫画</div>
-            <div class="menuOption" id="novel">小说图文</div>
-        </div>
-    </div>
-
-
-    <div class="navBottom" id="navBottom">
-        <div class="navBottomBar">
-            <div class="navBottomBarItem" id="navBottomHomeBar">
-               <div class="nBBIIcon" style="background-image: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/%E9%A6%96%E9%A1%B5.png?inline=false');"></div> 
-               <div class="nBBIText">主页</div> 
-            </div>
-            <div class="navBottomBarItem" id="navBottomRandBar">
-               <div class="nBBIIcon" style="background-image: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/%E9%9A%8F%E6%9C%BA.png?inline=false');"></div> 
-               <div class="nBBIText">发现</div> 
-            </div>
-        </div>
-    </div>
-
-
-    <!-- 加载前展示 -->
-    <div id="onload">
-        <div id="load">
-            <div class="loader"></div>
-            <div class="shadow"></div>
-        </div>
-        <div id="load_text">加载中</div>
-    </div>
-
-    <h1>宝藏小蛮资源库-宅男绅士的温柔乡，海量资源、劲爆内容、我们承诺永久免费！</h1>
-    <div id="container" class="container">
-        <div class="block"></div>
-        <div class="top">
-            <div class="head">
-                <img class="head_img" src="https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/ico.png?inline=false" alt="该图片已被地外生物侵略...">
-            </div>
-            <div class="search_div">
-                <input id="searchText" type="text" placeholder="搜索你的钟爱">
-                <div id="search_btn">
-                    <img id="search_icon" src="https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/search.png?inline=false" alt="搜索">
-                </div>
-            </div>
-            <!-- 搜索提示词 -->
-            <div class="searchTagList">
-                <div class="tagTitle">热门搜索 :</div>
-                <div class="searchTag">安卓</div>
-                <div class="searchTag">僵尸</div>
-                <div class="searchTag">巫师3</div>
-                <div class="searchTag">辐射4</div>
-                <div class="searchTag">亚洲之子</div>
-                <div class="searchTag">堕落</div>
-                <div class="searchTag">家族崩坏</div>
-                <div class="searchTag">甜心选择2</div>
-                <div class="searchTag">纳迪亚</div>
-                <div class="searchTag">创世秩序</div>
-                <div class="searchTag">欲望</div>
-                <div class="searchTag">3d</div>
-                <div class="searchTag">真人</div>
-                <div class="searchTag">GTA</div>
-            </div>
-        </div>
-
-
-        <div class="noticeCards">
-            <a class="noticeCard" href="./html/常见问题.html">
-                <div class="noticeIcon_question"></div>
-                <h3 class="noticeText">常见问题+解决办法</h3>
-            </a>
-            <a class="noticeCard" href="./html/classify.html?classify=精品游戏">
-                <div class="noticeIcon_fire"></div>
-                <h3 class="noticeText">火爆绅士游戏</h3>
-            </a>
-            <a class="noticeCard" href="https://docs.qq.com/form/page/DSm5YYmxyekZxUGtP">
-                <div class="noticeIcon_fire"></div>
-                <h3 class="noticeText">找不到你要的游戏?点我反馈!</h3>
-            </a>
-        </div>
-        
-        <div class="slider-container" style="border-radius: 8px;">
-            <div class="slider" id="main-slider">
-                <div class="slides">
-                    <a class="slide" href="/articles/热门游戏/9zUlnWgTow.html" style="background-image: url('https://img2.imgtp.com/2024/04/02/4pqLXK2k.png');">
-                        <div class="slide-content">上古卷轴5超绅士魔改版</div>
-                    </a>
-                    <a class="slide" href="/articles/热门游戏/Z5Z90aSh6p.html" style="background-image: url('https://heistbeer.com/d%2Ffile%2Fp%2F2020-09-05%2F15992610415.jpg');">
-                        <div class="slide-content">巫师3绅士魔改版</div>
-                    </a>
-                    <a class="slide" href="/articles/热门游戏/YbBtHmeGn7.html" style="background-image: url('https://heistbeer.com/d/file/2019-11-08/4618bbbbf9d05f96e9c427f5ba64fef4.png');">
-                        <div class="slide-content">辐射4 绅士H实验室</div>
-                    </a>
-                    <a class="slide" href="/articles/热门游戏/EUG4CGVtF8.html" style="background-image: url('https://img.alicdn.com/imgextra/i2/688103271/O1CN01BaUorO1a2AHbJaHm8_!!688103271.png');">
-                        <div class="slide-content">VAM超多国漫人物整合版</div>
-                    </a>
-                    <a class="slide" href="/articles/精品游戏/juqm8BndSJ.html" style="background-image: url('https://www.pcgameres.com/upload/portal/20210921/5f9999495d9127cafc6b68eaa10d63d9.jpg');">
-                        <div class="slide-content">家族崩坏V24</div>
-                    </a>
-                    <a class="slide" href="/articles/精品游戏/gew2MuGk5J.html" style="background-image: url('https://mcy567.com/wp-content/uploads/2023/07/Snipaste_2023-07-16_16-49-04.jpg');">
-                        <div class="slide-content">亚洲之子</div>
-                    </a>
-                    <a class="slide" href="/articles/精品游戏/nShN4DSumu.html" style="background-image: url('https://www.pcgameres.com/upload/portal/20220408/c448d1ec3a3d68993fe3bfb124faaafd.jpg');">
-                        <div class="slide-content">纳迪亚之宝</div>
-                    </a>
-                    <a class="slide" href="/articles/精品游戏/i3pr9rrcGd.html" style="background-image: url('https://s2.loli.net/2022/06/12/FgQI6XxtvGL9UyT.jpg');">
-                        <div class="slide-content">创世秩序</div>
-                    </a>
-                    <a class="slide" href="/articles/精品游戏/3rOuKf6I1e.html" style="background-image: url('https://www.llsl.pro/i/2023/09/29/6516bc9971a48.jpg');">
-                        <div class="slide-content">凤凰</div>
-                    </a>
-                </div>
-            </div>
-          
-            <div class="slideNav">
-              <span class="slideDot"></span>
-              <span class="slideDot"></span>
-              <span class="slideDot"></span>
-              <span class="slideDot"></span>
-              <span class="slideDot"></span>
-              <span class="slideDot"></span>
-              <span class="slideDot"></span>
-              <span class="slideDot"></span>
-              <span class="slideDot"></span>
-            </div>
-        </div>
-
-
-        <div class="searchBar">
-            <a class="Bar" href="./html/classify.html?classify=精品游戏">精品游戏</a>
-            <div class="bar" id="showBar">最新更新</div>
-            <a class="Bar" href="./html/classify.html?classify=热门游戏">热门游戏</a>
-        </div>
-        
-        <!-- 这里放所有card -->
-        <div class="cardList" id="cardList"></div>
-        <!-- 分页条 -->
-        <div class="pageBar" id="pageBar">
-            <div class="pageItem" id="upPage">上一页</div>
-            <div class="pageItem pageItemActive">1</div>
-            <div class="pageItem">2</div>
-            <div class="pageItem">3</div>
-            <div class="pageItem">4</div>
-            <div class="pageItem">5</div>
-            <div class="pageItem">...</div>
-            <div class="pageItem">22</div>
-            <div class="pageItem" id="downPage">下一页</div>
-            <input id="pageInput" placeholder="页码">
-            <div id="toPageBtn">跳转</div>
-        </div>
-        <div class="tailer">
-            <div class="tailerRow">
-                本站总访问量<span id="busuanzi_value_site_uv"></span>次
-            </div>
-            <div class="tailerRow">
-                防失联请关注微信公众号：<span style="color: rgb(253, 202, 120);">宝藏小蛮</span>
-            </div>
-            <div class="tailerRow">
-                目前已包含：<span id="cardsNum" style="color: rgb(253, 202, 120);"></span> 个内容
-            </div>
-        </div>
-    </div>
-
-
-</body>
-
-<script src="./component/navRow/navRow.js"></script>
-<script src="./component/slider/slider.js"></script>
-<script src="./js/clickEff.js"></script>
-<!-- <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool/disable-devtool.min.js'></script> -->
-<script src="./js/index.js"></script>
-</html>
+    
+    </html>l';
+            }
+            cTitle.href = ref;
+            cTitle.innerHTML = card.detail;
+    
+            var cTitleH = document.createElement('h2');
+            cTitleH.className = 'cTitle';
+            cTitleH.appendChild(cTitle);
+            msg.appendChild(flag);
+            msg.appendChild(cTitleH);
+            card1.appendChild(cover);
+            card1.appendChild(msg);
+            fireCardList.appendChild(card1);
+        })
+        onload.style.display = 'none'
+    </script>
+    
+    </html>

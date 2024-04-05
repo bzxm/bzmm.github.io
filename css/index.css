@@ -316,6 +316,9 @@ h1{
     background-color: #ff0070;
 }
 
+#hideMain{
+    display: none;
+}
 
 .tailer{
     width: 100%;
@@ -414,6 +417,51 @@ h1{
 }
 
 
+.Resource{
+    width: 96vw;
+    height: auto;
+    margin: 20px auto;
+    /* background: #5994e1; */
+}
+.homeClassifyRow{
+    width: 100%;
+    display: flex;
+    margin: 20px auto;
+    margin-bottom: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.homeClassifyTitle{
+    padding: 10px 10px;
+    font-size: 20px;
+    color: #555;
+    margin: auto 15px;
+    letter-spacing: 1px;
+}
+.homeClassifyBottom{
+    width: 30px;
+    height: 1px;
+    border-radius: 4px;
+    border-bottom: #ff0070 solid 4px;
+}
+.getMore{
+    width: 70vw;
+    max-width: 220px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    color: #fff;
+    background-color: #ff0070;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+.getMore:hover{
+    background-color: #ff1e7f;
+}
 
 /* 当视口宽度小于等于768px时应用以下样式 */
 @media (max-width: 1200px) {
