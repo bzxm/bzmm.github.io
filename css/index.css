@@ -145,8 +145,10 @@ h1{
     box-shadow: #aaa 0 0 4px;
     overflow: hidden;
     cursor: pointer;
+    transition: all 0.3s;
 }
 .card:hover{
+    transform: translateY(-4px);
     box-shadow: #d60f16cc 0 0 8px;
 }
 .cover{

@@ -299,12 +299,18 @@
 }
 .lastArticleLink{
     font-size: 14px;
+    line-height: 22px;
+    max-height: 44px;
+    overflow: hidden;
     display: inline-block;
     padding-right: 20px;
 }
 .nextArticleLink{
     font-size: 14px;
     width: 100%;
+    line-height: 22px;
+    max-height: 44px;
+    overflow: hidden;
     display: inline-block;
     padding-left: 20px;
     text-align: right;
@@ -401,7 +407,7 @@ a:active {
     position: absolute;
     left: 0;
     top: 0;
-    background:linear-gradient(to bottom, #3636361b,#121212a9);
+    background:linear-gradient(to bottom, #36363600 50%,#121212a9);
 }
 .cardMsg{
     width: 100%;
@@ -413,7 +419,7 @@ a:active {
     line-height: 16px;
     font-size: 13px;
     padding: 0 16px;
-    color: #fff;
+    color: #ffffff;
 }
 
 .noticeImport{
