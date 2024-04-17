@@ -161,6 +161,9 @@
     background-color: #ffe5ec;
 }
 
+.navBottom{
+    height: 0;
+}
 
 /* 当视口宽度小于等于768px时应用以下样式 */
 @media (max-width: 768px) {

@@ -138,7 +138,7 @@ h1{
     box-sizing: border-box;
 }
 .card{
-    width: 24vw;
+    width: 23vw;
     margin-bottom: 20px;
     border-radius: 6px;
     background-color: #fffbf6;
@@ -152,7 +152,7 @@ h1{
     box-shadow: #d60f16cc 0 0 8px;
 }
 .cover{
-    width: 24vw;
+    width: 23vw;
     height: 16vw;
     overflow: hidden;
     position: relative;
