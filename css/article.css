@@ -156,6 +156,10 @@
     background-size: contain;
 }
 
+
+#PERDAYDOWNLOAD{
+    display: none;
+}
 .downLoadArea{
     width: 90%;
     margin: 20px auto;
@@ -201,10 +205,12 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     cursor: pointer;
+    text-decoration: none;
 }
 .downLoadBtn:hover{
-    background-color: #c8365f;
-    box-shadow: #981a3e 0 0 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #f1789ae1;
 }
 
 .downLoadBody2{
@@ -581,6 +587,7 @@ a:active {
     .downLoadBtn{
         background-color: #fa5e8b;
         color: #fff;
+        text-decoration: none;
     }
     .downLoadBtn:hover{
         background-color: #c8365f;

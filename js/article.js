@@ -54,3 +54,57 @@ for(let i = 0; i < tags.length; i++){
         window.location.href = ref
     })
 }
+
+function isToday(someDate) {
+    const today = new Date();
+    return someDate.getDate() === today.getDate() &&
+           someDate.getMonth() === today.getMonth() &&
+           someDate.getFullYear() === today.getFullYear();
+}
+
+const PERDAYDOWNLOAD = document.getElementById('PERDAYDOWNLOAD')
+const PERDAYDOWNLOADBTN = document.getElementById('PERDAYDOWNLOADBTN')
+if(PERDAYDOWNLOADBTN != undefined){
+    PERDAYDOWNLOADBTN.addEventListener('click',() => {
+        console.log('点击了');
+        // 存储数据
+        localStorage.setItem('BZXM_PER_DAY', new Date());
+        localStorage.setItem('BZXM_PER_DAY_FLAG', false);
+    })
+}
+
+// 判断当前浏览器是否为 Edge
+function isEdge() {
+    return /Edg/.test(navigator.userAgent);
+}
+
+window.addEventListener('pageshow', function(event) {
+    // event.persisted 属性可以用于区分页面是从缓存中加载还是从服务器重新加载的
+    // 判断是否每日第一次获取
+    // 获取数据
+    isPERDAY();
+  });
+
+  const isPERDAY = () => {
+    const BZXM_PER_DAY = localStorage.getItem('BZXM_PER_DAY');
+    const BZXM_PER_DAY_FLAG = localStorage.getItem('BZXM_PER_DAY_FLAG');
+    if(BZXM_PER_DAY != undefined){
+        if(isToday(new Date(BZXM_PER_DAY)) && BZXM_PER_DAY_FLAG == 'true' && isEdge()){
+            console.log('dsssss');
+            if(PERDAYDOWNLOAD != undefined){
+                PERDAYDOWNLOAD.style.display = 'block'
+            }
+        }
+    }else{
+        // 存储数据
+        localStorage.setItem('BZXM_PER_DAY', new Date());
+        localStorage.setItem('BZXM_PER_DAY_FLAG', true);
+        if(isEdge()){
+            if(PERDAYDOWNLOAD != undefined){
+                PERDAYDOWNLOAD.style.display = 'block'
+            }
+        }
+    }
+  }
+
+  isPERDAY();
