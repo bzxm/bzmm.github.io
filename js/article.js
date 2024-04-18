@@ -63,48 +63,40 @@ function isToday(someDate) {
 }
 
 const PERDAYDOWNLOAD = document.getElementById('PERDAYDOWNLOAD')
-const PERDAYDOWNLOADBTN = document.getElementById('PERDAYDOWNLOADBTN')
-if(PERDAYDOWNLOADBTN != undefined){
-    PERDAYDOWNLOADBTN.addEventListener('click',() => {
-        console.log('点击了');
-        // 存储数据
-        localStorage.setItem('BZXM_PER_DAY', new Date());
-        localStorage.setItem('BZXM_PER_DAY_FLAG', false);
-    })
-}
 
-// 判断当前浏览器是否为 Edge
-function isEdge() {
-    return /Edg/.test(navigator.userAgent);
-}
+
 
 window.addEventListener('pageshow', function(event) {
     // event.persisted 属性可以用于区分页面是从缓存中加载还是从服务器重新加载的
-    // 判断是否每日第一次获取
-    // 获取数据
     isPERDAY();
   });
 
   const isPERDAY = () => {
-    const BZXM_PER_DAY = localStorage.getItem('BZXM_PER_DAY');
-    const BZXM_PER_DAY_FLAG = localStorage.getItem('BZXM_PER_DAY_FLAG');
-    if(BZXM_PER_DAY != undefined){
-        if(isToday(new Date(BZXM_PER_DAY)) && BZXM_PER_DAY_FLAG == 'true' && isEdge()){
-            console.log('dsssss');
-            if(PERDAYDOWNLOAD != undefined){
-                PERDAYDOWNLOAD.style.display = 'block'
-            }
-        }
+    if(isTimeInRange()){
+        PERDAYDOWNLOAD.style.display = 'block'
     }else{
-        // 存储数据
-        localStorage.setItem('BZXM_PER_DAY', new Date());
-        localStorage.setItem('BZXM_PER_DAY_FLAG', true);
-        if(isEdge()){
-            if(PERDAYDOWNLOAD != undefined){
-                PERDAYDOWNLOAD.style.display = 'block'
-            }
-        }
+        PERDAYDOWNLOAD.style.display = 'none'
     }
   }
 
   isPERDAY();
+
+  function isTimeInRange() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+
+    // 将时间转换为分钟数，方便比较
+    var currentTimeInMinutes = hours * 60 + minutes;
+
+    // 将 0:00 和 0:20 转换为分钟数
+    var startTimeInMinutes = 0 * 60;
+    var endTimeInMinutes = 0 * 60 + 15;
+
+    // 判断当前时间是否在指定范围内
+    if (currentTimeInMinutes >= startTimeInMinutes && currentTimeInMinutes <= endTimeInMinutes) {
+        return true;
+    } else {
+        return false;
+    }
+}
