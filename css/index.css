@@ -389,7 +389,17 @@ h1{
     font-size: 16px;
     font-weight: normal;
     padding-left: 20px;
-    
+}
+.freeCard{
+    flex: 1;
+    height: 24px;
+    line-height: 24px;
+    white-space: nowrap; /* 防止文字换行 */
+    overflow: hidden; /* 隐藏超出元素宽度的部分 */
+    text-overflow: ellipsis; /* 当文字溢出时显示省略号 */
+    color: #6a7177;
+    font-size: 14px;
+    font-weight: normal;
 }
 .noticeCard:hover .noticeIcon_question{
     width: 24px;
