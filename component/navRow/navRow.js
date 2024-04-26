@@ -4,6 +4,8 @@ const menuBar = document.getElementById('menuBar')
 const homeICO = document.getElementById('homeICO')
 // 菜单栏 menuSelect
 const menuSelect = document.getElementById('menuSelect')
+// 菜单栏 menuSelector
+const menuSelector= document.getElementById('menuSelector')
 // 菜单栏 option 主页
 const homeBtn = document.getElementById('homeBtn')
 // 菜单栏 niceGame 精品游戏
@@ -30,10 +32,12 @@ const toastBtn = document.getElementById('toastBtn')
 menuBar.addEventListener('click',() => {
     menuSelect.style.display = 'block'
     menuMask.style.display = 'block'
+    menuSelector.style.transform = 'translateX(0)';
 })
 menuMask.addEventListener('click',() => {
     menuMask.style.display = 'none'
     menuSelect.style.display = 'none'
+    menuSelector.style.transform = 'translateX(-110%)';
 })
 
 

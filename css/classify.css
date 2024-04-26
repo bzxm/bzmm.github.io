@@ -1,3 +1,7 @@
+.nouseH{
+    display: none;
+}
+
 .classifyBlock{
     width: 96%;
     height: auto;
