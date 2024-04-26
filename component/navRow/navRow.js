@@ -1,3 +1,5 @@
+// 菜单条 navRow
+const navRow = document.getElementById('navRow')
 // 菜单条 menuBar
 const menuBar = document.getElementById('menuBar')
 // 菜单条 标题ico
@@ -29,15 +31,29 @@ const toastBtn = document.getElementById('toastBtn')
 
 
 // 点击显示隐藏菜单项
+let menuFlag = 0;
 menuBar.addEventListener('click',() => {
-    menuSelect.style.display = 'block'
-    menuMask.style.display = 'block'
-    menuSelector.style.transform = 'translateX(0)';
+    if(menuFlag == 0){
+        menuSelect.style.display = 'block'
+        navRow.style.boxShadow = 'none';
+        menuMask.style.display = 'block';
+        menuSelector.style.transform = 'translateX(0)';
+        menuFlag = 1;
+    }else{
+        navRow.style.boxShadow = '#c6c6c67b 0 1px 4px';
+        menuMask.style.display = 'none'
+        menuSelect.style.display = 'none'
+        menuSelector.style.transform = 'translateX(-110%)';
+        menuFlag = 0;
+    }
+    
 })
 menuMask.addEventListener('click',() => {
+    navRow.style.boxShadow = '#c6c6c67b 0 1px 4px';
     menuMask.style.display = 'none'
     menuSelect.style.display = 'none'
     menuSelector.style.transform = 'translateX(-110%)';
+    menuFlag = 0;
 })
 
 
