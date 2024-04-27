@@ -33,7 +33,7 @@ li {
     position: absolute;
     width: 60px;
     height: 60px;
-    background: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/%E8%8F%9C%E5%8D%95.png?inline=false');
+    background-image: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/menuBar.png?inline=false');
     background-size: 40% 40%;
     background-repeat: no-repeat;
     background-position: center;
@@ -64,7 +64,7 @@ li {
     right: 6px;
     width: 60px;
     height: 60px;
-    background: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/search_pink.png?inline=false');
+    background: url('/imgs/search1.png');
     background-size: 40% 40%;
     background-repeat: no-repeat;
     background-position: center;
@@ -79,12 +79,13 @@ li {
     height: 100vh;
     background-color: #3c3c3c4b;
     transition: all 0.3s;
+    z-index: 10;
 }
 #searchToast{
-    position: relative;
+    position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-300%);
     width: 80%;
     max-width: 700px;
     height: 240px;
@@ -95,6 +96,8 @@ li {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    transition: all 0.3s;
+    z-index: 30;
 }
 .toastTitle{
     text-align: center;
@@ -156,7 +159,7 @@ li {
     width: 100vw;
     height: 100vh;
     position: fixed;
-    background-color: #383838ba;
+    background-color: #383838d9;
     z-index: 80;
 }
 
@@ -171,6 +174,7 @@ li {
     z-index: 99;
     background-color: #fff;
     transition: all 0.3s;
+    box-shadow: #5b5b5b 2px 0 10px;
 }
 .menuOptions{
     width: 100%;
@@ -190,6 +194,7 @@ li {
     font-size: 14px;
     text-align: center;
     padding: 6px 15px;
+    text-decoration: none;
 }
 .menuItem1::before{
     content: '';
@@ -229,12 +234,14 @@ li {
     background-color: #ffd5e3;
 }
 .menuItem2SubLink{
+    width: 100%;
     display: inline-block;
     height: 32px;
     color: #595959;
     font-size: 13px;
     text-align: center;
     padding: 6px 15px;
+    text-decoration: none;
 }
 .menuItem2Sub:hover .menuItem2SubLink{
     color: #3466c9;
@@ -243,31 +250,6 @@ li {
 }
 
 
-.menuSelect{
-    display: none;
-    position: fixed;
-    top: 66px;
-    left: 4px;
-    border-radius: 1px;
-    box-shadow: #9393939b 0 0 10px;
-    width: 140px;
-    background-color: #fff;
-    padding: 5px 0;
-}
-.menuOption{
-    width: 100%;
-    height: 45px;
-    font-size: 15px;
-    letter-spacing: 2px;
-    line-height: 40px;
-    padding-left: 14px;
-    color: #3c3c3c;
-    cursor: pointer;
-}
-.menuOption:hover{
-    color: #ff0070;
-    background-color: #ffe5ec;
-}
 
 .navBottom{
     height: 0;

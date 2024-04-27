@@ -23,46 +23,107 @@
 
 </head>
 <body>
-    <div class="navRow">
-        <!-- 菜单条 -->
-        <div class="menuBar" id="menuBar"></div>
-        <!-- 页面标签条 -->
-        <div id="homeICO" class="myICOBar">
-            <div class="myICO"></div>
-            <!-- <img src="https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/bzxmIcon_pink.gif?inline=false" alt="点击返回主页" class="myICO"> -->
-        </div>
-        <!-- 搜索按钮 -->
-        <div class="nav_search" id="nav_search"></div>
-        <!-- 搜索弹出框 -->
-        <div id="searchMask">
-            <div id="searchToast">
-                <div class="toastTitle">搜索</div>
-                <input type="text" class="toastInput" id="toastInput" placeholder="搜索你的钟爱">
-                <div class="toastBtn" id="toastBtn"></div>
-                <!-- 关闭按钮 -->
-                <div class="toastClose" id="toastClose"></div>
+    <div class="menuComponent">
+        <div class="navRow" id="navRow">
+            <!-- 菜单条 -->
+            <div class="menuBar" id="menuBar"></div>
+            <!-- 页面标签条 -->
+            <div id="homeICO" class="myICOBar">
+                <div class="myICO"></div>
+                <!-- <img src="https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/bzxmIcon_pink.gif?inline=false" alt="点击返回主页" class="myICO"> -->
             </div>
+            <!-- 搜索按钮 -->
+            <div class="nav_search" id="nav_search"></div>
         </div>
+    
         <!-- 添加一个透明遮罩 -->
         <div id="menuMask"></div>
-        <div class="menuSelect" id="menuSelect">
-            <div class="menuOption" id="homeBtn">首页</div>
-            <div class="menuOption" id="niceGame">精品游戏</div>
-            <div class="menuOption" id="pcGame">热门游戏</div>          
-            <div class="menuOption" id="animal">动漫漫画</div>
-            <div class="menuOption" id="novel">小说图文</div>
+        <!-- 菜单栏 -->
+        <div class="menuSelector" id="menuSelector">
+            <ul class="menuOptions">
+                <li class="menuItem">
+                    <a href="/" class="menuItem1" id="menuToHome">首页</a>
+                </li>
+                <li class="menuItem">
+                    <a href="/html/classify.html?classify=精品游戏" class="menuItem1" id="menuToHome">精品游戏</a>
+                    <ul class="menuItem2">
+                        <li class="menuItem2Sub">
+                            <a href="/html/classify.html?classify=精品游戏&text=神级大作" class="menuItem2SubLink">神级大作</a>
+                        </li>
+                        <li class="menuItem2Sub">
+                            <a href="/html/classify.html?classify=精品游戏&text=3D艺术" class="menuItem2SubLink">3D艺术</a>
+                        </li>
+                        <li class="menuItem2Sub">
+                            <a href="/html/classify.html?classify=精品游戏&text=二次元风" class="menuItem2SubLink">二次元风</a>
+                        </li>
+                        <li class="menuItem2Sub">
+                            <a href="/html/classify.html?classify=精品游戏&text=真人互动" class="menuItem2SubLink">真人互动</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menuItem">
+                    <a href="/html/classify.html?classify=热门游戏" class="menuItem1" id="menuToHome">热门游戏</a>
+                    <ul class="menuItem2">
+                        <li class="menuItem2Sub">
+                            <a href="/html/classify.html?classify=热门游戏&text=3A大作" class="menuItem2SubLink">3A大作</a>
+                        </li>
+                        <li class="menuItem2Sub">
+                            <a href="" class="menuItem2SubLink">高自由度</a>
+                        </li>
+                        <li class="menuItem2Sub">
+                            <a href="" class="menuItem2SubLink">高画质</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menuItem">
+                    <a href="/html/classify.html?classify=动漫漫画" class="menuItem1" id="menuToHome">动漫漫画</a>
+                    <ul class="menuItem2">
+                        <li class="menuItem2Sub">
+                            <a href="/html/classify.html?classify=动漫漫画&text=3D漫画" class="menuItem2SubLink">3D漫画</a>
+                        </li>
+                        <li class="menuItem2Sub">
+                            <a href="/html/classify.html?classify=动漫漫画&text=纸片老婆" class="menuItem2SubLink">纸片老婆</a>
+                        </li>
+                        <li class="menuItem2Sub">
+                            <a href="/html/classify.html?classify=动漫漫画&text=动画" class="menuItem2SubLink">动画</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menuItem">
+                    <a href="/html/classify.html?classify=小说图文" class="menuItem1" id="menuToHome">小说图文</a>
+                </li>
+                <li class="menuItem">
+                    <a href="/html/常见问题.html" class="menuItem1" id="menuToHome">常见问题</a>
+                    <ul class="menuItem2">
+                        <li class="menuItem2Sub">
+                            <a href="/html/游戏无法打开常见问题.html" class="menuItem2SubLink">游戏打不开</a>
+                        </li>
+                        <li class="menuItem2Sub">
+                            <a href="/html/安卓手机解压教程.html" class="menuItem2SubLink">解压教程</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-    </div>
-
-    <div class="navBottom" id="navBottom">
-        <div class="navBottomBar">
-            <div class="navBottomBarItem" id="navBottomHomeBar">
-               <div class="nBBIIcon" style="background-image: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/%E9%A6%96%E9%A1%B5.png?inline=false');"></div> 
-               <div class="nBBIText">主页</div> 
-            </div>
-            <div class="navBottomBarItem" id="navBottomRandBar">
-               <div class="nBBIIcon" style="background-image: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/%E9%9A%8F%E6%9C%BA.png?inline=false');"></div> 
-               <div class="nBBIText">发现</div> 
+        <!-- 搜索弹出框 -->
+        <div id="searchMask"></div>
+        <div id="searchToast">
+            <div class="toastTitle">搜索</div>
+            <input type="text" class="toastInput" id="toastInput" placeholder="搜索你的钟爱">
+            <div class="toastBtn" id="toastBtn"></div>
+            <!-- 关闭按钮 -->
+            <div class="toastClose" id="toastClose"></div>
+        </div>
+        <div class="navBottom" id="navBottom">
+            <div class="navBottomBar">
+                <div class="navBottomBarItem" id="navBottomHomeBar">
+                   <div class="nBBIIcon" style="background-image: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/%E9%A6%96%E9%A1%B5.png?inline=false');"></div> 
+                   <div class="nBBIText">主页</div> 
+                </div>
+                <div class="navBottomBarItem" id="navBottomRandBar">
+                   <div class="nBBIIcon" style="background-image: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/%E9%9A%8F%E6%9C%BA.png?inline=false');"></div> 
+                   <div class="nBBIText">随机</div> 
+                </div>
             </div>
         </div>
     </div>

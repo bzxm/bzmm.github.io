@@ -58,6 +58,7 @@ window.onload = () => {
     // 解析 URL 中的参数
     var urlParams = new URLSearchParams(window.location.search);
     var classifyValue = urlParams.get('classify');
+    var classifyText = urlParams.get('text');
     if(classifyValue!=null){
         document.title = classifyValue
 
@@ -101,7 +102,9 @@ window.onload = () => {
                 document.getElementById('animalClassify').style.display = 'flex'
             }
             onload.style.display = 'none'
-
+            if(classifyText!=null){
+                searchCardAndShow(classifyText)
+            }
             console.log('上个页面传递:'+classifyValue);
         }
     }else{
