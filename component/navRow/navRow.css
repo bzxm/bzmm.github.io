@@ -33,12 +33,76 @@ li {
     position: absolute;
     width: 60px;
     height: 60px;
-    background-image: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/menuBar.png?inline=false');
-    background-size: 40% 40%;
-    background-repeat: no-repeat;
-    background-position: center;
     cursor: pointer;
 }
+.menu-checkbox {
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .hamburger-lines {
+    display: block;
+    height: 15px;
+    width: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 26px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .hamburger-lines .line {
+    display: block;
+    height: 0.1em;
+    text-align:center;
+    width: 100%;
+    background: #ff90aa;
+  }
+  
+  .hamburger-lines .line1 {
+    width: 19px;
+    transform-origin: 0% 0%;
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .hamburger-lines .line2 {
+    width: 20px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .hamburger-lines .line3 {
+    width: 19px;
+    transform-origin: 0% 100%;
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  
+  .menu-checkbox:checked ~ .hamburger-lines .line1 {
+    transform: rotate(45deg);
+  }
+  
+  .menu-checkbox:checked ~ .hamburger-lines .line2 {
+    transform: scaleY(0);
+  }
+  
+  .menu-checkbox:checked ~ .hamburger-lines .line3 {
+    transform: rotate(-45deg);
+  }
+
+
+
+
+
 .myICOBar{
     height: 100%;
     width: 200px;
@@ -64,7 +128,7 @@ li {
     right: 6px;
     width: 60px;
     height: 60px;
-    background: url('/imgs/search1.png');
+    background: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/search1.png?inline=false');
     background-size: 40% 40%;
     background-repeat: no-repeat;
     background-position: center;
@@ -86,7 +150,7 @@ li {
     left: 50%;
     top: 50%;
     transform: translate(-50%,-300%);
-    width: 80%;
+    width: 88%;
     max-width: 700px;
     height: 240px;
     background-color: #fff;
@@ -96,7 +160,7 @@ li {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    transition: all 0.3s;
+    transition: all 0.4s;
     z-index: 30;
 }
 .toastTitle{
@@ -174,6 +238,8 @@ li {
     z-index: 99;
     background-color: #fff;
     transition: all 0.3s;
+    overflow-x: hidden;
+    overflow-y: auto;
     box-shadow: #5b5b5b 2px 0 10px;
 }
 .menuOptions{
@@ -190,11 +256,12 @@ li {
 .menuItem1{
     display: inline-block;
     height: 32px;
+    width: 100%;
     color: #595959;
     font-size: 14px;
-    text-align: center;
     padding: 6px 15px;
     text-decoration: none;
+    transition: all 0.3s;
 }
 .menuItem1::before{
     content: '';
@@ -217,18 +284,21 @@ li {
     width: 100%;
     height: auto;
     padding: 4px 10px;
+    padding-bottom: 8px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 .menuItem2Sub{
     width: 47%;
-    height: 32px;
-    padding: 10px auto;
-    margin-bottom: 5px;
+    height: 30px;
+    padding: 0 auto;
+    margin-top: 2px;
+    margin-bottom: 6px;
     border-radius: 4px;
     text-align: center;
     background-color: #fee6ed;
+    transition: all 0.3s;
 }
 .menuItem2Sub:hover{
     background-color: #ffd5e3;
@@ -236,16 +306,17 @@ li {
 .menuItem2SubLink{
     width: 100%;
     display: inline-block;
-    height: 32px;
+    height: 30px;
+    line-height: 30px;
     color: #595959;
-    font-size: 13px;
+    font-size: 12px;
     text-align: center;
-    padding: 6px 15px;
+    padding: 0 15px;
     text-decoration: none;
+    transition: all 0.3s;
 }
 .menuItem2Sub:hover .menuItem2SubLink{
     color: #3466c9;
-    font-weight: 600;
     text-decoration: none;
 }
 
@@ -323,8 +394,24 @@ li {
 
 @media (prefers-color-scheme: dark) {
     .navRow{
-        background-color: #232323;
-        box-shadow: #13131386 0 2px 6px;
+        background-color: #323335;
+        box-shadow: #151515d0 0 2px 6px;
+    }
+
+    .hamburger-lines .line {
+        background: #afb6bc;
+      }
+
+    .nav_search{
+        position: absolute;
+        right: 6px;
+        width: 60px;
+        height: 60px;
+        background: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/searchDark.png?inline=false');
+        background-size: 30% 30%;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
     }
     .navBottomBar{
         background-color: #ffffffdc;
@@ -343,15 +430,42 @@ li {
         color: #373737ca;
         font-size: 15px;
     }
-    .menuSelect{
-        background-color: #232323;
+    
+    #menuMask{
+        background-color: #181818e3;
     }
-    .menuOption{
-        color: #ccc;
+    .menuSelector{
+        background-color: #323335;
+        box-shadow: none;
     }
-    .menuOption:hover{
-        background-color: #aaa;
+    .menuOptions{
+        background-color: #353638;
     }
+    .menuItem1{
+        color: #fff;
+    }
+    .menuItem1::before{
+        border: .1em solid #ff5050;
+    }
+    .menuItem1:hover{
+        color: #6f53ea;
+    }
+
+    .menuItem2Sub{
+        background-color: #3c3c3e;
+    }
+    .menuItem2Sub:hover{
+        background-color: #3b3b3c;
+    }
+    .menuItem2SubLink{
+        color: #fff;
+
+    }
+    .menuItem2Sub:hover .menuItem2SubLink{
+        color: #5d73df;
+    }
+
+
 
     .myICO{
         background-image: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/bzxmIcon_light.gif?inline=false');

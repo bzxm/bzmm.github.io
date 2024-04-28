@@ -1,7 +1,7 @@
 // 菜单条 navRow
 const navRow = document.getElementById('navRow')
-// 菜单条 menuBar
-const menuBar = document.getElementById('menuBar')
+// 菜单条 menuCheck
+const menuCheck = document.getElementById('menuCheck')
 // 菜单条 标题ico
 const homeICO = document.getElementById('homeICO')
 // 菜单栏 menuSelector
@@ -25,27 +25,30 @@ const toastBtn = document.getElementById('toastBtn')
 
 // 点击显示隐藏菜单项
 let menuFlag = 0;
-menuBar.addEventListener('click',() => {
+let navRowBackC;
+let navRowMuneBaBackr;
+
+
+
+menuCheck.addEventListener('click',() => {
     if(menuFlag == 0){
+        navRowBackC = navRow.style.boxShadow;
         navRow.style.boxShadow = 'none';
         menuMask.style.display = 'block';
         menuSelector.style.transform = 'translateX(0)';
-        menuBar.style.backgroundImage = "url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/close1.png?inline=false')";
         menuFlag = 1;
     }else{
-        navRow.style.boxShadow = '#c6c6c67b 0 1px 4px';
+        navRow.style.boxShadow = navRowBackC;
         menuMask.style.display = 'none'
         menuSelector.style.transform = 'translateX(-110%)';
-        menuBar.style.backgroundImage = "url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/menuBar.png?inline=false')";
         menuFlag = 0;
     }
     
 })
 menuMask.addEventListener('click',() => {
-    navRow.style.boxShadow = '#c6c6c67b 0 1px 4px';
+    navRow.style.boxShadow = navRowBackC;
     menuMask.style.display = 'none'
     menuSelector.style.transform = 'translateX(-110%)';
-    menuBar.style.backgroundImage = "url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/menuBar.png?inline=false')";
     menuFlag = 0;
 })
 
@@ -145,7 +148,6 @@ window.addEventListener('resize', function() {
     if(+width >= 770){
         menuMask.style.display = 'none'
         menuSelector.style.transform = 'translateX(-110%)';
-        menuBar.style.backgroundImage = "url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/menuBar.png?inline=false')";
         menuFlag = 0;
     }
 });
