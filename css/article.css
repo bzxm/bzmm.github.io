@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: HarmonyOS_Sans_SC_Regular,-apple-system, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;;
     /* 其他样式属性重置 */
 }
 
@@ -33,6 +34,7 @@
 
 .articlePage{
     width: 98%;
+    max-width: 700px;
     margin: auto;
     height: auto;
     background-color: #fff;
@@ -42,10 +44,11 @@
 }
 
 #articleTitle{
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 28px;
+    margin-top: 10px;
+    margin-bottom: 30px;
     font-weight: normal;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     word-break: break-all;
 }
 .articleMsg{
@@ -102,29 +105,44 @@
 }
 
 .articlePTitle{
+    display: flex;
+    height: 32px;
+    align-items: center;
     font-size: large;
     font-weight: 600;
     color: #fa5e8b;
     letter-spacing: 2px;
-    padding-left: 5px;
+    padding-left: 6px;
     margin-top: 50px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    transition: all 0.3s;
 }
 .articlePTitle::before{
-    content: "●";
+    content: '';
+    width: 8px;
+    height: 20px;
+    background-color: #fa5e8b;
     margin-right: 10px;
+    display: inline-block;
+    outline: 0!important;
+}
+.articlePTitle:hover{
+    transform: translateX(20px);
+}
+.articlePTitle:hover::before{
+    box-shadow: #ffb7cb -7px 0 0px;
 }
 .articleP{
     margin: 16px auto;
-    padding-left: 20px;
     line-height: 30px;
 }
 
 .articleImg{
     display: block;
     margin: 5px auto;
-    width: 96%;
-    max-width: 600px;
+    width: 100%;
+    max-width: 1000px;
     border-radius: 6px;
     height: auto;
     transition: all 0.3s;
@@ -375,7 +393,9 @@ a:active {
 }
 .relationalCards{
     width: 100vw;
+    max-width: 700px;
     display: flex;
+    margin: auto;
     margin-top: 10px;
     margin-bottom: 30px;
     flex-wrap: wrap;
@@ -383,7 +403,9 @@ a:active {
 }
 .card{
     width: 47vw;
+    max-width: 329px;
     height: 32vw;
+    max-height: 224px;
     border-radius: 10px;
     box-shadow: #a7a7a7aa 0 0 6px;
     background-color: #fff;
@@ -399,14 +421,18 @@ a:active {
 }
 .cardCover{
     width: 47vw;
+    max-width: 329px;
     height: 32vw;
+    max-height: 224px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 .cardMask{
     width: 47vw;
+    max-width: 329px;
     height: 32vw;
+    max-height: 224px;
     position: absolute;
     left: 0;
     top: 0;

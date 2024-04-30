@@ -100,6 +100,9 @@ window.onload = () => {
             }else if(classifyValue == '动漫漫画'){
                 classifyTitle.innerHTML = '动漫漫画'
                 document.getElementById('animalClassify').style.display = 'flex'
+            }else if(classifyValue == '小说图文'){
+                classifyTitle.innerHTML = '精品小说'
+                //document.getElementById('animalClassify').style.display = 'flex'
             }
             onload.style.display = 'none'
             if(classifyText!=null){

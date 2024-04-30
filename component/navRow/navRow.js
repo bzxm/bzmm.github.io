@@ -32,12 +32,20 @@ let navRowMuneBaBackr;
 
 menuCheck.addEventListener('click',() => {
     if(menuFlag == 0){
+        if(navBottom != undefined){
+            navBottom.style.display = 'none';
+        }
+        menuCheck.checked = true;
         navRowBackC = navRow.style.boxShadow;
         navRow.style.boxShadow = 'none';
         menuMask.style.display = 'block';
         menuSelector.style.transform = 'translateX(0)';
         menuFlag = 1;
     }else{
+        if(navBottom != undefined){
+            navBottom.style.display = 'flex';
+        }
+        menuCheck.checked = false;
         navRow.style.boxShadow = navRowBackC;
         menuMask.style.display = 'none'
         menuSelector.style.transform = 'translateX(-110%)';
@@ -46,6 +54,10 @@ menuCheck.addEventListener('click',() => {
     
 })
 menuMask.addEventListener('click',() => {
+    if(navBottom != undefined){
+        navBottom.style.display = 'flex';
+    }
+    menuCheck.checked = false;
     navRow.style.boxShadow = navRowBackC;
     menuMask.style.display = 'none'
     menuSelector.style.transform = 'translateX(-110%)';
@@ -86,6 +98,7 @@ nav_search.addEventListener('click',() => {
         menuSearchFlag = 0;
     }
 })
+
 searchMask.addEventListener('click',() => {
     searchMask.style.display = 'none'
     searchToast.style.transform = 'translate(-50%,-300%)';
@@ -145,9 +158,10 @@ if(navBottomRandBar != undefined){
 window.addEventListener('resize', function() {
     var width = window.innerWidth;   // 获取当前窗口的宽度
     var height = window.innerHeight; // 获取当前窗口的高度
-    if(+width >= 770){
+    if(+width >= 800){
         menuMask.style.display = 'none'
         menuSelector.style.transform = 'translateX(-110%)';
+        menuCheck.checked = false;
         menuFlag = 0;
     }
 });

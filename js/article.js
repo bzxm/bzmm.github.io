@@ -26,7 +26,21 @@
 // }
 
 // })
+const menuCheckArticle = document.getElementById('menuCheck')
 
+  window.addEventListener('pageshow', function(event) {
+    if (event.persisted) {
+        if(menuCheckArticle != undefined && menuFlag == 0){
+            menuCheckArticle.checked = false;
+        }
+    } else {
+        if(menuCheckArticle != undefined && menuFlag == 0){
+            menuCheckArticle.checked = false;
+        }
+    }
+    
+
+  });
 
 
 // 获取标题 前往下载 gotoDown

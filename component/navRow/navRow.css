@@ -16,8 +16,12 @@ li {
     padding: 0;
 }
 
-*{
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: HarmonyOS_Sans_SC_Regular,-apple-system, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;;
+    /* 其他样式属性重置 */
 }
 
 
@@ -26,7 +30,7 @@ li {
     height: 60px;
     background-color: #fff;
     box-shadow: #c6c6c67b 0 1px 4px;
-    position: fixed;
+    position: absolute;
     z-index: 110;
 }
 .menuBar{
@@ -105,7 +109,7 @@ li {
 
 .myICOBar{
     height: 100%;
-    width: 200px;
+    width: auto;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -123,8 +127,15 @@ li {
     background-repeat: no-repeat;
     pointer-events: none;
 }
+
+
+
+
+
 .nav_search{
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     right: 6px;
     width: 60px;
     height: 60px;
@@ -322,8 +333,126 @@ li {
 
 
 
+
+.menuselectBar{
+    height: 60px;
+    display: none;
+    position: absolute;
+    right: 80px;
+}
+.menuOptionBar{
+    cursor: pointer;
+    width: auto;
+    height: 60px;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #323335;
+}
+.menuOptionBar:hover{
+    text-decoration: none;
+    color: #ff84af;
+}
+.menuOptionBar:hover .menuOpBIconHome{
+    background-image: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/%E9%A6%96%E9%A1%B5_p.png?inline=false');
+}
+.menuOptionBar:hover .menuOpBIconStar{
+    background-image: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/star%20(2).png?inline=false');
+}
+.menuOptionBar:hover .menuOpBIconFireG{
+    background-image: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/H5game%20(1).png?inline=false');
+}
+.menuOptionBar:hover .menuOpBIconAni{
+    background-image: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/%E5%8A%A8%E6%BC%AB%20(1).png?inline=false');
+}
+.menuOptionBar:hover .menuOpBIconNovel{
+    background-image: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/f4%20(1).png?inline=false');
+}
+.menuOptionBar:hover .menuOptionBarCaret{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    color: #ff84af !important;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
+
+.menuOpBIconHome{
+    width: 16px;
+    height: 16px;
+    background-position: center;
+    background-size: contain;
+    background-image: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/%E9%A6%96%E9%A1%B5.png?inline=false');
+}
+.menuOpBIconStar{
+    width: 18px;
+    height: 18px;
+    background-position: center;
+    background-size: contain;
+    background-image: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/star%20(1).png?inline=false');
+}
+.menuOpBIconFireG{
+    width: 16px;
+    height: 16px;
+    background-position: center;
+    background-size: contain;
+    background-image: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/H5game.png?inline=false');
+}
+.menuOpBIconAni{
+    width: 16px;
+    height: 16px;
+    background-position: center;
+    background-size: contain;
+    background-image: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/%E5%8A%A8%E6%BC%AB.png?inline=false');
+}
+.menuOpBIconNovel{
+    width: 16px;
+    height: 16px;
+    background-position: center;
+    background-size: contain;
+    background-image: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/f4.png?inline=false');
+}
+.menuOptionBarText{
+    font-size: 14px;
+    margin: 0 4px;
+}
+.menuOptionBarCaret{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    color: #3466c9 !important;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
+
+
+
 .navBottom{
     height: 0;
+}
+
+@media (min-width: 800px) {
+    .menuBar{
+        display: none;
+    }
+    .myICOBar{
+        left: 30px;
+        transform: translateX(0);
+    }
+    .menuselectBar{
+        display: flex;
+    }
 }
 
 /* 当视口宽度小于等于768px时应用以下样式 */
