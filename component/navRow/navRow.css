@@ -542,6 +542,9 @@ li {
         background-position: center;
         cursor: pointer;
     }
+    .menuOptionBar{
+        color: #979ca0;
+    }
     .navBottomBar{
         background-color: #ffffffdc;
     }

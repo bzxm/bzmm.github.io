@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: HarmonyOS_Sans_SC_Regular,-apple-system, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;;
     /* 其他样式属性重置 */
 }
 body{
@@ -23,15 +22,29 @@ h1{
 
 
 .container{
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
 }
+.homePage{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    padding-top: 20px;
+}
+.homePageMain{
+    transition: all 0.3s;
+    width: 80%;
+    max-width: 768px;
+    height: auto;
+}
 
 .top{
-    width: 100vw;
+    width: 100%;
     height: 320px;
+    border-radius: 10px;
     padding-top: 50px;
     background:url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/background.jpg?inline=false') no-repeat;
     background-position: center;
@@ -139,7 +152,7 @@ h1{
     box-sizing: border-box;
 }
 .card{
-    width: 23vw;
+    width: 30%;
     margin-bottom: 20px;
     border-radius: 6px;
     background-color: #fffbf6;
@@ -153,22 +166,30 @@ h1{
     box-shadow: #d60f16cc 0 0 8px;
 }
 .cover{
-    width: 23vw;
-    height: 16vw;
-    overflow: hidden;
+    width: 100%;
+    background-color: #fffbf6;
     position: relative;
+    padding-top: 60%;
 }
 .cover_img{
     pointer-events: none;
     width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: aqua;
+
     height: 100%;
     object-fit:cover;
 }
 .cover_load{
     position: absolute;
     top: 50%;
-    width: 20vw;
-    height: 20vw;
+    width: 20%;
+    height: auto;
     left: 50%;
     transform: translate(-50%,-50%);
     background:url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/load.gif?inline=false') center;
@@ -348,13 +369,20 @@ h1{
 .noticeCards{
     width: 100%;
     margin-top: 20px;
+    box-sizing: border-box;
     height: auto;
+}
+.noticeCardMain{
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    overflow:hidden;
+    background-color: #fff;
 }
 .noticeCard{
     text-decoration: none; /* 取消下划线 */
     color: inherit; /* 使用父元素的文本颜色 */
-    display: inline-block;
-    width: 96vw;
+    width: 100%;
     height: auto;
     margin: auto;
     padding: 10px 20px;
@@ -426,16 +454,16 @@ h1{
     display: flex;
 }
 
-.gundong{
+/* .gundong{
     width: 96vw;
     height: 56vw;
     background-color: #5994e188;
     margin: 10px auto;
-}
+} */
 
 
 .Resource{
-    width: 96vw;
+    width: 99%;
     height: auto;
     margin: 20px auto;
     /* background: #5994e1; */
@@ -463,7 +491,7 @@ h1{
     border-bottom: #ff0070 solid 4px;
 }
 .getMore{
-    width: 70vw;
+    width: 70%;
     max-width: 220px;
     height: 40px;
     line-height: 40px;
@@ -480,10 +508,10 @@ h1{
     background-color: #ff1e7f;
 }
 
-/* 当视口宽度小于等于768px时应用以下样式 */
+/* 当视口宽度小于等于1200px时应用以下样式 */
 @media (max-width: 1200px) {
     .card{
-        width: 30vw;
+        width: 30%;
         margin-bottom: 20px;
         border-radius: 6px;
         background-color: #fffbf6;
@@ -495,16 +523,40 @@ h1{
         box-shadow: #d60f16cc 0 0 8px;
     }
     .cover{
-        width: 30vw;
-        height: 20vw;
-        overflow: hidden;
+        width: 100%;
+        background-color: #fffbf6;
         position: relative;
+        padding-top: 60%;
+    }
+    .cover_img{
+        pointer-events: none;
+        width: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: aqua;
+
+        height: 100%;
+        object-fit:cover;
     }
 }
 
 /* 当视口宽度小于等于768px时应用以下样式 */
 @media (max-width: 768px) {
-    /* 在此处添加针对小屏幕的样式 */
+    .homePage{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        height: auto;
+        padding-top: 0px;
+    }
+    .homePageMain{
+        width: 98%;
+        height: auto;
+    }
     .top{
         height: 300px;
     }
@@ -563,8 +615,8 @@ h1{
     }
 
     .card{
-        width: 47vw;
-        margin-bottom: 2vw;
+        width: 47%;
+        margin-bottom: 2%;
         border-radius: 6px;
         background-color: #fff;
     }
@@ -572,10 +624,24 @@ h1{
         box-shadow: #d6410f 0 0 8px;
     }
     .cover{
-        width: 47vw;
-        height: 30vw;
+        width: 100%;
         background-color: #fffbf6;
+        position: relative;
+        padding-top: 60%;
+    }
+    .cover_img{
+        pointer-events: none;
+        width: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: aqua;
 
+        height: 100%;
+        object-fit:cover;
     }
     .cover_load{
         position: absolute;
@@ -623,13 +689,71 @@ h1{
         pointer-events: none;
     }
     .top{
-        padding-top: 70px;
+        padding-top: 24px;
+        width: 100%;
+        height: 260px;
+        border-radius: 10px;
+        background:url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/background.jpg?inline=false') no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+@media (max-width: 400px) {
+    .head_img{
+        width: 230px;
+        height: auto;
+        pointer-events: none;
+    }
+    .top{
+        padding-top: 20px;
+        width: 100%;
+        height: 220px;
+        border-radius: 10px;
+        background:url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/background.jpg?inline=false') no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .search_div{
+        width: 70%;
+        height: 40px;
+        margin: auto;
+        margin-bottom: 6px;
+        display: flex;
+        overflow: hidden;
+        border-radius: 15px;
+        background-color: #ffffffe6;
+    }
+    #searchText{
+        flex: 1;
+        min-width: 0; 
+        outline: none;
+        border: none;
+        font-size: 17px;
+        padding-left: 30px;
+        color: #de5283;
+        font-weight: 600;
+        letter-spacing: 2px;
+        background-color: transparent;
+    }
+    #search_btn{
+        width: 60px;
+        height: 100%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #search_icon{
+        width: 30px;
+        height: 30px;
+        pointer-events: none;
     }
 }
 
 @media (max-width: 320px) {
     .card{
-        width: 81vw;
+        width: 81%;
         margin-bottom: 20px;
         border-radius: 6px;
         background-color: #fffbf6;
@@ -638,10 +762,24 @@ h1{
         box-shadow: #d6410f 0 0 8px;
     }
     .cover{
-        width: 81vw;
-        height: 54vw;
-        background-color: aquamarine;
+        width: 100%;
+        background-color: #fffbf6;
+        position: relative;
+        padding-top: 60%;
+    }
+    .cover_img{
+        pointer-events: none;
+        width: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(175, 182, 182);
 
+        height: 100%;
+        object-fit:cover;
     }
 }
 
@@ -688,6 +826,9 @@ h1{
     .noticeCard{
         background-color: #232323;
     }
+    .noticeCardMain{
+        background-color: #232323;
+    }
     .noticeCard:hover{
         position: relative;
         box-shadow: #5e5e5e00 0 0 8px;
@@ -716,6 +857,9 @@ h1{
     }
     .cover{
         background-color: #303030;
+    }
+    .cover_img{
+        background-color: #b1b1b1;
     }
     .cTitle{
         color: #eee;
