@@ -7,6 +7,7 @@ const homeICO = document.getElementById('homeICO')
 // 菜单栏 menuSelector
 const menuSelector= document.getElementById('menuSelector')
 
+
 // 菜单栏 menuMask
 const menuMask = document.getElementById('menuMask')
 // 菜单搜索 nav_search
@@ -153,6 +154,7 @@ if(navBottomRandBar != undefined){
         document.location.href = '../../html/random.html'
     })
 }
+
 
 
 window.addEventListener('resize', function() {

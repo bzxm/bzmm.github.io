@@ -349,9 +349,22 @@ li {
     align-items: center;
     text-decoration: none;
     color: #323335;
+    position: relative;
 }
-.menuOptionBar:hover{
+.menuOptionLink{
+    cursor: pointer;
+    width: auto;
+    height: 60px;
+    display: flex;
+    align-items: center;
     text-decoration: none;
+    color: #323335;
+    position: relative;
+}
+.menuOptionLink:hover{
+    text-decoration: none;
+}
+.menuOptionBar:hover .menuOptionBarText{
     color: #ff84af;
 }
 .menuOptionBar:hover .menuOpBIconHome{
@@ -380,6 +393,9 @@ li {
     border-top: 4px solid;
     border-right: 4px solid transparent;
     border-left: 4px solid transparent;
+}
+.menuOptionBar:hover .menuOptionToasts{
+    display: block;
 }
 
 
@@ -434,7 +450,36 @@ li {
     border-right: 4px solid transparent;
     border-left: 4px solid transparent;
 }
-
+.menuOptionToasts{
+    display: none;
+    position: absolute;
+    width: 150px;
+    height: auto;
+    color: #323335;
+    background-color: #fff;
+    border-radius: 0px 0px 8px 8px;
+    top: 60px;
+    border: 1px solid rgba(0,0,0,.15);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+.menuOptionToast{
+    display: block;
+    color: #323335;
+    text-decoration: none;
+    width: 100%;
+    height: 40px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    line-height: 40px;
+    border-bottom: #d3d2d2 solid 1px;
+    padding-left: 20px;
+}
+.menuOptionToast:hover{
+    text-decoration: none;
+    color: #eb5f8d;
+    font-weight: 600;
+    background-color: #fff1f494;
+}
 
 
 
@@ -452,6 +497,12 @@ li {
     }
     .menuselectBar{
         display: flex;
+    }
+}
+
+@media (min-width: 1200px) {
+    .myICOBar{
+        left: 60px;
     }
 }
 

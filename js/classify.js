@@ -45,7 +45,7 @@ let currentClassifyCards = []
 // 当前页面展示的内容
 let currentShowCards = []
 // 每页最多展示个数
-const perPageNum = 20
+const perPageNum = 18
 // 当前是第几页
 let currentPageNum = 1
 // 总共多少页

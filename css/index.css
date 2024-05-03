@@ -59,8 +59,8 @@ h1{
     width: 6px; /* 修改滚动条宽度（适用于Chrome和Safari） */
 }
 ::-webkit-scrollbar-thumb {
-    background-color: #808080; /* 修改滚动条拖动块的颜色 */
-    border-radius: 6px; /* 修改滚动条拖动块的圆角 */
+    background: linear-gradient(180deg, #FFEB3B 0%, #00BCD4 60%, #ffe503 90%);
+    border-radius: 999px;
   }
   
   ::-webkit-scrollbar-track {
