@@ -180,7 +180,7 @@ h1{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: aqua;
+    background-color: #fffbf6;
 
     height: 100%;
     object-fit:cover;
@@ -606,7 +606,7 @@ h1{
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: aqua;
+        background-color: #fffbf6;
 
         height: 100%;
         object-fit:cover;
@@ -707,7 +707,7 @@ h1{
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: aqua;
+        background-color: #fffbf6;
 
         height: 100%;
         object-fit:cover;
@@ -749,7 +749,7 @@ h1{
 
 
 }
-
+ 
 
 @media (max-width: 520px) {
     .head_img{

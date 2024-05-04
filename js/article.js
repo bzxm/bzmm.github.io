@@ -60,12 +60,25 @@ function goLink(link){
 }
 
 const articleTags = document.getElementById('articleTags')
-const tags = articleTags.children;
-for(let i = 0; i < tags.length; i++){
-    tags[i].addEventListener('click',() => {
-        // 搜索标签
-        let ref = '../../index.html?search='+tags[i].innerHTML
-        window.location.href = ref
-    })
+if(articleTags != undefined){
+    const tags = articleTags.children;
+    for(let i = 0; i < tags.length; i++){
+        tags[i].addEventListener('click',() => {
+            // 搜索标签
+            let ref = '../../index.html?search='+tags[i].innerHTML
+            window.location.href = ref
+        })
+    }
 }
 
+const articleTagTus = document.getElementById('articleTagTus')
+if(articleTagTus != undefined){
+    const tagTus = articleTagTus.children;
+    for(let i = 0; i < tagTus.length; i++){
+        tagTus[i].addEventListener('click',() => {
+            // 搜索标签
+            let ref = '../../html/18tu.html?text='+tagTus[i].innerHTML
+            window.location.href = ref
+        })
+    }
+}

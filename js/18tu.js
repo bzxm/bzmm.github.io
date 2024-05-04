@@ -84,9 +84,10 @@ window.onload = () => {
 
         allCards = cards
 
-        getCurrentClassifyCards('全部')
+
         currentPageNum = 1
-        showThis(getCurrentShowCards(currentPageNum))
+
+        searchCardAndShow('全部')
         // 滚动到页面顶部
         container.scrollTo(0, 0);
 
@@ -161,15 +162,15 @@ const showThis = (cards) => {
             cardConfig.className = 'cardConfigPink'
             cardConfig.innerHTML = classifies[0]
             cardConfig.addEventListener('click',(e) => {
-                searchCardAndShow(classifies[0])
+                searchCardAndShow('全部')
                 e.stopPropagation()
             })
             flag.appendChild(cardConfig)
 
-            if(card.classify.includes('神级大作')){
+            if(card.classify.includes('精品合集')){
                 var cardConfig = document.createElement('span');
                 cardConfig.className = 'cardConfigFire'
-                cardConfig.innerHTML = '神级大作'
+                cardConfig.innerHTML = '精品合集'
                 cardConfig.addEventListener('click',(e) => {
                     searchCardAndShow('神级大作')
                     e.stopPropagation()

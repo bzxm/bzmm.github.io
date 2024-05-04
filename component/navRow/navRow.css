@@ -593,6 +593,9 @@ li {
         background-position: center;
         cursor: pointer;
     }
+    .menuOptionLink{
+        color: #979ca0;
+    }
     .menuOptionBar{
         color: #979ca0;
     }

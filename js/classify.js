@@ -86,9 +86,9 @@ window.onload = () => {
     
             allCards = cards
     
-            getCurrentClassifyCards(classifyValue)
+            
             currentPageNum = 1
-            showThis(getCurrentShowCards(currentPageNum))
+            searchCardAndShow('全部')
             // 滚动到页面顶部
             container.scrollTo(0, 0);
             if(classifyValue == '精品游戏'){
@@ -178,7 +178,7 @@ const showThis = (cards) => {
             cardConfig.className = 'cardConfigPink'
             cardConfig.innerHTML = classifies[0]
             cardConfig.addEventListener('click',(e) => {
-                searchCardAndShow(classifies[0])
+                searchCardAndShow('全部')
                 e.stopPropagation()
             })
             flag.appendChild(cardConfig)
