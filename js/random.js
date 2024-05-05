@@ -71,7 +71,7 @@ window.onload = () => {
 
         // 清除 null
         cards1.forEach(item=>{
-            if(item!=null){
+            if(item!=null && !item.classify.includes('福利姬')){
                 cards.push(item)
             }
         })
