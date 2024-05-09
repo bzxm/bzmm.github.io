@@ -118,6 +118,16 @@ toastClose.addEventListener('click',() => {
 toastBtn.addEventListener('click',() => {
     toHomeSearch(toastInput.value);
 })
+// 回车搜索
+if(toastInput!=undefined){
+    toastInput.addEventListener('keypress', function(event) {
+        // 检查按下的键是否是回车键
+        if (event.key == 'Enter') {
+            // 在这里执行回车键按下时的操作
+            toHomeSearch(toastInput.value);
+        }
+    });
+}
 
 
 // 上下滑动页面显示隐藏下方导航栏
@@ -154,8 +164,65 @@ if(navBottomRandBar != undefined){
         document.location.href = '../../html/random.html'
     })
 }
+const navBottomfljBar = document.getElementById('navBottomfljBar');
+if(navBottomfljBar != undefined){
+    navBottomfljBar.addEventListener('click',() => {
+        document.location.href = '../../html/18tu.html'
+    })
+}
 
+// 点击搜索框聚焦事件
+const searchPlaceHolder = document.getElementById('searchPlaceHolder');
+const inputDiv = document.getElementById('inputDiv')
+const underLine = document.getElementById('underLine')
+if(toastInput != undefined){
+    let isFo = false;
+    toastInput.addEventListener('focus',() => {
+        if(searchPlaceHolder != undefined){
+            searchPlaceHolder.style.transform = 'translateY(-12px)';
+            searchPlaceHolder.style.top = '0'
+            searchPlaceHolder.style.color = '#ff53a9'
+            searchPlaceHolder.style.fontSize = '12px'
+            underLine.style.width = '100%'
+        }
+        isFo = true;
+    })
+    toastInput.addEventListener('blur',() => {
+        if(searchPlaceHolder != undefined && toastInput.value == ''){
+            searchPlaceHolder.style.transform = 'translateY(-50%)';
+            searchPlaceHolder.style.top = '50%'
+            searchPlaceHolder.style.color = '#555659'
+            searchPlaceHolder.style.fontSize = '16px'
+            underLine.style.width = '0'
+        }
+        isFo = false;
+    })
+    toastInput.addEventListener("mouseover",() => {
+        underLine.style.width = '100%'
+    })
+    toastInput.addEventListener("mouseleave",() => {
+        if(!isFo){
+            underLine.style.width = '0'
+        }
+    })
+}
 
+// 点击 searchToastTag 填充输入框
+ // 使用 document.getElementsByClassName() 获取类名为 "example" 的所有元素
+ var elements = document.getElementsByClassName('searchToastTag');
+
+ // 遍历这些元素
+ for (var i = 0; i < elements.length; i++) {
+     (function(element) {
+         // 在闭包中为每个元素添加事件监听器
+         element.addEventListener('click', function() {
+             if (toastInput !== undefined) {
+                 toastInput.focus();
+                 toastInput.value = element.innerHTML;
+             }
+         });
+     })(elements[i]);
+    }
 
 window.addEventListener('resize', function() {
     var width = window.innerWidth;   // 获取当前窗口的宽度

@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
     /* 其他样式属性重置 */
 }
 body{
@@ -565,7 +566,7 @@ h1{
         height: auto;
     }
     .search_div{
-        width: 86%;
+        width: 88%;
         height: 45px;
         margin: auto;
         margin-bottom: 10px;
@@ -683,6 +684,9 @@ h1{
 
 
 @media (max-width: 520px) {
+    .search_div{
+        border-radius: 6px;
+    }
     .head_img{
         width: 300px;
         height: auto;
@@ -701,12 +705,12 @@ h1{
 
 @media (max-width: 400px) {
     .head_img{
-        width: 230px;
+        width: 250px;
         height: auto;
         pointer-events: none;
     }
     .top{
-        padding-top: 20px;
+        padding-top: 10px;
         width: 100%;
         height: 220px;
         border-radius: 10px;
@@ -715,13 +719,12 @@ h1{
         background-size: cover;
     }
     .search_div{
-        width: 70%;
+        width: 88%;
         height: 40px;
         margin: auto;
         margin-bottom: 6px;
         display: flex;
         overflow: hidden;
-        border-radius: 15px;
         background-color: #ffffffe6;
     }
     #searchText{
