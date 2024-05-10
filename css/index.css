@@ -684,6 +684,9 @@ h1{
 
 
 @media (max-width: 520px) {
+    .Bar{
+        display: none;
+    }
     .search_div{
         border-radius: 6px;
     }
@@ -725,7 +728,7 @@ h1{
         margin-bottom: 6px;
         display: flex;
         overflow: hidden;
-        background-color: #ffffffe6;
+        background-color: #fffffff9;
     }
     #searchText{
         flex: 1;

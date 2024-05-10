@@ -120,7 +120,7 @@ toastBtn.addEventListener('click',() => {
 })
 // 回车搜索
 if(toastInput!=undefined){
-    toastInput.addEventListener('keypress', function(event) {
+    toastInput.addEventListener('keydown', function(event) {
         // 检查按下的键是否是回车键
         if (event.key == 'Enter') {
             // 在这里执行回车键按下时的操作
