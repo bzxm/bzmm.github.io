@@ -167,6 +167,8 @@ li {
     width: 88%;
     max-width: 700px;
     height: auto;
+    max-height: 80vh;
+    overflow: scroll;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: #3c3c3c99 0 0 10px;
@@ -228,6 +230,8 @@ li {
 }
 
 .toastBtn{
+    position: absolute;
+    right: 2px;
     width: 40px;
     height: 40px;
     background: url('https://gitcode.net/2301_78006839/wxpj/-/raw/master/img/web/search1.png?inline=false') center;

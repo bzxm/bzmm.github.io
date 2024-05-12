@@ -23,6 +23,9 @@ const toastInput = document.getElementById('toastInput')
 // 菜单搜索框 搜索按钮 toastBtn
 const toastBtn = document.getElementById('toastBtn')
 
+// 最近搜索tags recentSearchTags
+const recentSearchTags = document.getElementById('recentSearchTags')
+
 
 // 点击显示隐藏菜单项
 let menuFlag = 0;
@@ -97,6 +100,23 @@ nav_search.addEventListener('click',() => {
         searchMask.style.display = 'none'
         searchToast.style.transform = 'translate(-50%,-300%)';
         menuSearchFlag = 0;
+    }
+    // 获取最近搜索存储
+    let recentTags = localStorage.getItem('recentSearchTags');
+    if(recentTags!=null){
+        const recentTagss = JSON.parse(recentTags);
+        recentTagss.forEach(tag => {
+            let searchToastTag = document.createElement('div');
+            searchToastTag.className = 'searchToastTag';
+            searchToastTag.innerHTML = tag;
+            searchToastTag.addEventListener('click',() => {
+                if (toastInput !== undefined) {
+                    toastInput.focus();
+                    toastInput.value = searchToastTag.innerHTML;
+                }
+            })
+            recentSearchTags.appendChild(searchToastTag);
+        });
     }
 })
 

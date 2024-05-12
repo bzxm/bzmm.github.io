@@ -137,6 +137,25 @@ request.onload = function () {
     // 搜索内容
     var searchText = urlParams.get('search');
     if(searchText!=null){
+        // 获取最近搜索存储
+        let recentTags = localStorage.getItem('recentSearchTags');
+        let tags = [];
+        if(recentTags!=null){
+            tags = JSON.parse(recentTags);
+        }
+        let index = tags.indexOf(searchText);
+        if(index != -1){
+            tags.splice(index,1);
+        }
+        tags.unshift(searchText);
+        if(tags.length > 30){
+            let tagz = [];
+            for(let i = 0; i < 30; i++){
+                tagz.push(tags[i]);
+            }
+            tags = tagz;
+        }
+        localStorage.setItem('recentSearchTags',JSON.stringify(tags));
         searchCardAndShow(searchText)
     }
 
