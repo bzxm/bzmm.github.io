@@ -103,6 +103,7 @@ nav_search.addEventListener('click',() => {
     }
     // 获取最近搜索存储
     let recentTags = localStorage.getItem('recentSearchTags');
+    recentSearchTags.innerHTML = ''
     if(recentTags!=null){
         const recentTagss = JSON.parse(recentTags);
         recentTagss.forEach(tag => {
