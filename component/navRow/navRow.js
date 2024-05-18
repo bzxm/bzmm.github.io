@@ -192,6 +192,7 @@ if(navBottomfljBar != undefined){
     })
 }
 
+
 // 点击搜索框聚焦事件
 const searchPlaceHolder = document.getElementById('searchPlaceHolder');
 const inputDiv = document.getElementById('inputDiv')
