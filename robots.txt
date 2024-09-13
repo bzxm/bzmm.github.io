@@ -1,7 +1,0 @@
-User-agent: *
-Disallow: /data/
-Disallow: /js/
-Disallow: /css/
-Disallow: /html/classify.html/
-Disallow: /html/article.html/
-Sitemap:https://bzxm.github.io/sitemap.xml
